@@ -1,0 +1,10 @@
+.header {
+  background-color: #2b0091;
+  color: white;
+  display: flex;
+
+  flex-direction: row;
+}
+.header h1 {
+  padding-left: 11px;
+}

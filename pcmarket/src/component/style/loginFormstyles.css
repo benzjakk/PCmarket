@@ -1,8 +1,7 @@
 .loginForm {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   margin: 20px;
-  position: absolute;
   right: 0px;
 }
 .loginForm input,

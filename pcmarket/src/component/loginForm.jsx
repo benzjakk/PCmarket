@@ -1,6 +1,6 @@
 import React from "react";
 import auth from "../firebase/authFirebase.js";
-import "./style/loginFormstyle.css";
+import "./style/loginFormstyles.css";
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -88,6 +88,7 @@ class LoginForm extends React.Component {
         />
 
         <button>Login</button>
+        <button type="button">Register</button>
       </form>
     );
   }

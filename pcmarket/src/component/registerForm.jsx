@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import auth from "../firebase/authFirebase.js";
+import React, { Component, Fragment } from "react";
+import firebase from "../firebase/Firebase.js";
+import "./style/registerFormstyles.css";
 class RegisterForm extends Component {
   state = {
     email: "",
@@ -16,7 +17,8 @@ class RegisterForm extends Component {
     e.preventDefault();
     const { email, password } = this.state;
 
-    auth
+    firebase
+      .auth()
       .createUserWithEmailAndPassword(email, password)
       .catch(function (error) {
         // Handle Errors here.
@@ -28,24 +30,27 @@ class RegisterForm extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.onSubmit} className="loginForm">
-        <input
-          placeholder=" Email"
-          className="input"
-          type="email"
-          name="email"
-          onChange={this.onChange}
-        />
+      <div className="registerForm">
+        <label>Registration</label>
+        <form onSubmit={this.onSubmit} className="loginForm">
+          <input
+            placeholder=" Email"
+            className="input"
+            type="email"
+            name="email"
+            onChange={this.onChange}
+          />
 
-        <input
-          placeholder=" Password"
-          type="password"
-          name="password"
-          onChange={this.onChange}
-        />
+          <input
+            placeholder=" Password"
+            type="password"
+            name="password"
+            onChange={this.onChange}
+          />
 
-        <button>Register</button>
-      </form>
+          <button>Register</button>
+        </form>
+      </div>
     );
   }
 }

@@ -1,6 +1,7 @@
 import React from "react";
-import auth from "../firebase/authFirebase.js";
+import firebase from "../firebase/Firebase.js";
 import "./style/loginFormstyles.css";
+
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -14,16 +15,19 @@ class LoginForm extends React.Component {
   }
   logout = (e) => {
     e.preventDefault();
-    auth.signOut().then((response) => {
-      this.setState({
-        currentUser: null,
-        email: "",
-        password: "",
+    firebase
+      .auth()
+      .signOut()
+      .then((response) => {
+        this.setState({
+          currentUser: null,
+          email: "",
+          password: "",
+        });
       });
-    });
   };
   componentDidMount() {
-    auth.onAuthStateChanged((user) => {
+    firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.setState({
           currentUser: user,
@@ -44,7 +48,8 @@ class LoginForm extends React.Component {
     e.preventDefault();
 
     const { email, password } = this.state;
-    auth
+    firebase
+      .auth()
       .signInWithEmailAndPassword(email, password)
       .then((response) => {
         console.log(response);
@@ -57,7 +62,6 @@ class LoginForm extends React.Component {
           message: error.message,
         });
       });
-    // TODO: implement signInWithEmailAndPassword()
   };
 
   render() {
@@ -88,7 +92,6 @@ class LoginForm extends React.Component {
         />
 
         <button>Login</button>
-        <button type="button">Register</button>
       </form>
     );
   }

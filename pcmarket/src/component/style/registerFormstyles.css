@@ -1,0 +1,8 @@
+.registerForm label {
+  font-size: 50px;
+  font-weight: bolder;
+  color: white;
+}
+.registerForm {
+  padding: 100px;
+}

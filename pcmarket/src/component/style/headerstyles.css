@@ -6,16 +6,19 @@
   width: 20vh;
   height: 100vh;
 }
-.header h1 {
+
+.header a {
   font-size: 26px;
   padding-left: 5px;
-  padding-bottom: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
   cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
 }
-.header h2 {
-  padding: 5px;
-}
-.header h2:hover {
+
+.header a:hover {
   cursor: pointer;
   background-color: rgb(252, 195, 6);
   color: #2b0091;

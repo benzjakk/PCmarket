@@ -11,6 +11,7 @@ class LoginForm extends React.Component {
       password: "",
       currentUser: null,
       message: "",
+      emailVerified: false,
     };
   }
   logout = (e) => {
@@ -29,7 +30,9 @@ class LoginForm extends React.Component {
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        console.log(user);
         this.setState({
+          emailVerified: user.emailVerified,
           currentUser: user,
         });
       }
@@ -69,7 +72,10 @@ class LoginForm extends React.Component {
     if (currentUser) {
       return (
         <div className="loginForm">
-          <p>Hello {currentUser.email}</p>
+          {this.state.emailVerified ? null : (
+            <p className="caution">Please verified your email</p>
+          )}
+          <p>Hello, {currentUser.displayName}</p>
           <button onClick={this.logout}>Logout</button>
         </div>
       );

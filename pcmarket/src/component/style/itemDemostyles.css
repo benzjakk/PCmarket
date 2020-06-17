@@ -1,0 +1,10 @@
+.itemDemo {
+  background-color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  margin: 30px;
+  cursor: pointer;
+  border-radius: 20px;
+}

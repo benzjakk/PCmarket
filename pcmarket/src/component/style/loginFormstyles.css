@@ -17,3 +17,8 @@ button {
   cursor: pointer;
   background-color: rgb(252, 195, 6);
 }
+
+.loginForm .caution {
+  color: red;
+  background-color: rgb(252, 195, 6);
+}

@@ -17,9 +17,11 @@ class Header extends Component {
         <Link to="/">Display card</Link>
         <Link to="/">Mainboard</Link>
         <Link to="/">RAM</Link>
+        <Link to="/">Storage</Link>
         <Link to="/">Cooling</Link>
         <Link to="/">PSU</Link>
         <Link to="/">Case</Link>
+        <Link to="/">Gaming Gear</Link>
         <Link to="/">Network</Link>
         <Link to="/register">Register</Link>
         <LoginForm />

@@ -13,16 +13,16 @@ class Header extends Component {
     return (
       <div className="header">
         <Link to="/">PC Market</Link>
-        <Link to="/">CPU</Link>
-        <Link to="/">Display card</Link>
-        <Link to="/">Mainboard</Link>
-        <Link to="/">RAM</Link>
-        <Link to="/">Storage</Link>
-        <Link to="/">Cooling</Link>
-        <Link to="/">PSU</Link>
-        <Link to="/">Case</Link>
-        <Link to="/">Gaming Gear</Link>
-        <Link to="/">Network</Link>
+        <Link to="/cpu">CPU</Link>
+        <Link to="/displaycard">Display card</Link>
+        <Link to="/mainboard">Mainboard</Link>
+        <Link to="/ram">RAM</Link>
+        <Link to="/storage">Storage</Link>
+        <Link to="/cooling">Cooling</Link>
+        <Link to="/psu">PSU</Link>
+        <Link to="/case">Case</Link>
+        <Link to="/gamingear">Gaming Gear</Link>
+        <Link to="/network">Network</Link>
         <Link to="/register">Register</Link>
         <LoginForm />
         <button onClick={this.handleUpload}>Upload</button>

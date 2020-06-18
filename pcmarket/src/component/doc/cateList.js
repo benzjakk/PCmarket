@@ -20,6 +20,7 @@ export default {
     "LGA1200",
     "LGA2011",
     "AM4",
+    "TR4",
     "ETC",
   ],
 
@@ -60,6 +61,8 @@ export default {
 
   storageType: ["SSD", "HDD", "ETC"],
   storageCapacity: [
+    "120GB",
+    "250GB",
     "500GB",
     "1TB",
     "2TB",

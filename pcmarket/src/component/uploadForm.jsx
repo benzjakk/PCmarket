@@ -15,6 +15,7 @@ class UploadForm extends Component {
     type: "New",
     currentPage: "uploadinfo",
     currentItemUid: "",
+    contact: "",
   };
 
   handleChange = (e) => {
@@ -76,6 +77,7 @@ class UploadForm extends Component {
         seller: user.uid,
         sellerName: user.displayName,
         type: this.state.type,
+        contact: this.state.contact,
       })
       .then((ref) => {
         alert("Upload Info เสร็จสิ้น");
@@ -243,13 +245,14 @@ class UploadForm extends Component {
     if (this.state.currentPage == "uploadinfo") {
       return (
         <form className="uploadForm" onSubmit={this.handleUpload}>
-          <b>Upload</b>
+          <b style={{ fontSize: "100px" }}>Upload</b>
           <b>Name</b>
           <input
             type="text"
             name="name"
             required
             onChange={this.handleChange}
+            maxLength="30"
           />
           <b>Description</b>
           <textarea
@@ -291,6 +294,8 @@ class UploadForm extends Component {
             <option>New</option>
             <option>Used</option>
           </select>
+          <b>Contact</b>
+          <textarea name="contact" required onChange={this.handleChange} />
 
           <button>Upload Info</button>
         </form>

@@ -1,9 +1,14 @@
 .uploadForm {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 100px;
+  padding-top: 30px;
 }
 
 .uploadForm b {
   color: greenyellow;
+}
+.uploadForm textarea {
+  width: 400px;
+  height: 200px;
 }

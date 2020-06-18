@@ -55,8 +55,9 @@ class uploadPic extends Component {
         // gets the download url then sets the image from firebase as the value for the imgUrl key:
         firebase
           .storage()
-          .ref("images")
-          .child(this.state.imageAsFile.name)
+          .ref("items/images")
+          .child(this.props.currentItemUid)
+          .child("01")
           .getDownloadURL()
           .then((fireBaseUrl) => {
             this.setState({ imgUrl: fireBaseUrl });
@@ -88,7 +89,11 @@ class uploadPic extends Component {
           src={this.state.imageAsUrl}
           width="100px"
         />
-        <input type="file" onChange={this.handleImageAsFile} />
+        <input
+          type="file"
+          onChange={this.handleImageAsFile}
+          accept="image/png, image/jpeg"
+        />
         <button>Upload Picture</button>
       </form>
     );

@@ -9,14 +9,26 @@ class ItemDemo extends Component {
   render() {
     if (this.props.item) {
       const item = this.props.item;
+
       return (
         <div className="itemDemo">
+          <img
+            src={item.pic}
+            width="100px"
+            height="100px"
+            style={{
+              margin: "10px",
+              objectFit: "cover",
+              objectPosition: "center",
+            }}
+          />
           <b>{item.name}</b>
-          <b>{item.price}</b>
-          <b>{item.ref1}</b>
-          <b>{item.ref2}</b>
-          <b>{item.sellerName}</b>
-          <b>{item.type}</b>
+          <b>ราคา : {item.price}</b>
+          <b>ผู้ขาย : {item.sellerName}</b>
+          <b>ประเภท : {item.type}</b>
+          <b style={{ fontSize: "13px" }}>
+            {item.ref1} {item.ref2}
+          </b>
         </div>
       );
     } else return null;

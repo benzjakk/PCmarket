@@ -5,9 +5,10 @@ class HomePage extends Component {
   state = {
     items: [],
   };
-  componentDidMount() {
+  componentDidMount = (e) => {
     const db = firebase.firestore();
     db.collection("items")
+      .orderBy("time", "desc")
       .get()
       .then((res) => {
         res.forEach((doc) => {
@@ -23,14 +24,34 @@ class HomePage extends Component {
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
+
   render() {
     return (
-      <Fragment>
-        {this.state.items.map((item, i) => (
-          <ItemDemo item={item} key={i} />
-        ))}
-      </Fragment>
+      <div style={{ display: "flex", flexDirection: "column" }}>
+        <b
+          style={{
+            color: "white",
+            paddingLeft: "33px",
+            paddingTop: "30px",
+            fontSize: "30px",
+          }}
+        >
+          {" "}
+          ลงขายล่าสุด{" "}
+        </b>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            flexWrap: "wrap",
+          }}
+        >
+          {this.state.items.map((item, i) => (
+            <ItemDemo item={item} key={i} />
+          ))}
+        </div>
+      </div>
     );
   }
 }

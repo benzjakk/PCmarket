@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import firebase from "../firebase/Firebase.js";
-import ItemDemo from "./itemDemo.jsx";
-import cateList from "./doc/cateList.js";
-class MBResult extends Component {
+import firebase from "../../firebase/Firebase.js";
+import ItemDemo from "../itemDemo.jsx";
+import cateList from "../doc/cateList.js";
+
+class GamingGearResult extends Component {
   state = {
     items: [],
     selectedItems: [],
@@ -13,7 +14,7 @@ class MBResult extends Component {
   componentDidMount = (e) => {
     const db = firebase.firestore();
     db.collection("items")
-      .where("cate", "==", "Mainboard")
+      .where("cate", "==", "Gaming Gear")
       .orderBy("time", "desc")
       .get()
       .then((res) => {
@@ -64,7 +65,7 @@ class MBResult extends Component {
           }}
         >
           {" "}
-          Mainboard{" "}
+          Gaming Gear{" "}
         </b>
         <div>
           <b style={{ color: "white", marginLeft: "30px" }}> Type : </b>
@@ -74,11 +75,11 @@ class MBResult extends Component {
             <option>Used</option>
           </select>
 
-          <b style={{ color: "white" }}> Socket : </b>
-          <select key="mb" name="ref1" onChange={this.filterChange}>
+          <b style={{ color: "white" }}> Gaming Gear Type : </b>
+          <select key="gaminggear" name="ref1" onChange={this.filterChange}>
             <option>All</option>
-            {cateList.cpuSocket.map((cpuS, i) => (
-              <option>{cpuS}</option>
+            {cateList.gamingGearType.map((ggT, i) => (
+              <option>{ggT}</option>
             ))}
           </select>
 
@@ -106,4 +107,4 @@ class MBResult extends Component {
   }
 }
 
-export default MBResult;
+export default GamingGearResult;

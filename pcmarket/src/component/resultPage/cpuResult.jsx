@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import firebase from "../firebase/Firebase.js";
-import ItemDemo from "./itemDemo.jsx";
-import cateList from "./doc/cateList.js";
-class StorageResult extends Component {
+import firebase from "../../firebase/Firebase.js";
+import ItemDemo from "../itemDemo.jsx";
+import cateList from "../doc/cateList.js";
+class CPUResult extends Component {
   state = {
     items: [],
     selectedItems: [],
@@ -13,7 +13,7 @@ class StorageResult extends Component {
   componentDidMount = (e) => {
     const db = firebase.firestore();
     db.collection("items")
-      .where("cate", "==", "Storage")
+      .where("cate", "==", "CPU")
       .orderBy("time", "desc")
       .get()
       .then((res) => {
@@ -64,7 +64,7 @@ class StorageResult extends Component {
           }}
         >
           {" "}
-          Storage{" "}
+          CPU{" "}
         </b>
         <div>
           <b style={{ color: "white", marginLeft: "30px" }}> Type : </b>
@@ -73,18 +73,18 @@ class StorageResult extends Component {
             <option>New</option>
             <option>Used</option>
           </select>
-          <b style={{ color: "white" }}> Storage type : </b>
-          <select key="storage" name="ref1" onChange={this.filterChange}>
+          <b style={{ color: "white" }}> Series : </b>
+          <select key="cpu" name="ref1" onChange={this.filterChange}>
             <option>All</option>
-            {cateList.storageType.map((strT, i) => (
-              <option>{strT}</option>
+            {cateList.cpuSeries.map((cpuS, i) => (
+              <option>{cpuS}</option>
             ))}
           </select>
-          <b style={{ color: "white" }}> Capacity : </b>
-          <select key="storage1" name="ref2" onChange={this.filterChange}>
+          <b style={{ color: "white" }}> Socket : </b>
+          <select key="cpu1" name="ref2" onChange={this.filterChange}>
             <option>All</option>
-            {cateList.storageCapacity.map((strC, i) => (
-              <option>{strC}</option>
+            {cateList.cpuSocket.map((cpuS, i) => (
+              <option>{cpuS}</option>
             ))}
           </select>
 
@@ -112,4 +112,4 @@ class StorageResult extends Component {
   }
 }
 
-export default StorageResult;
+export default CPUResult;

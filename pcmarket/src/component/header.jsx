@@ -21,7 +21,7 @@ class Header extends Component {
         <Link to="/cooling">Cooling</Link>
         <Link to="/psu">PSU</Link>
         <Link to="/case">Case</Link>
-        <Link to="/gamingear">Gaming Gear</Link>
+        <Link to="/gaminggear">Gaming Gear</Link>
         <Link to="/network">Network</Link>
         <Link to="/register">Register</Link>
         <LoginForm />

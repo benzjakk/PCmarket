@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import firebase from "../firebase/Firebase.js";
-import ItemDemo from "./itemDemo.jsx";
-import cateList from "./doc/cateList.js";
-class CPUResult extends Component {
+import firebase from "../../firebase/Firebase.js";
+import ItemDemo from "../itemDemo.jsx";
+import cateList from "../doc/cateList.js";
+
+class PSUResult extends Component {
   state = {
     items: [],
     selectedItems: [],
@@ -13,7 +14,7 @@ class CPUResult extends Component {
   componentDidMount = (e) => {
     const db = firebase.firestore();
     db.collection("items")
-      .where("cate", "==", "CPU")
+      .where("cate", "==", "PSU")
       .orderBy("time", "desc")
       .get()
       .then((res) => {
@@ -64,7 +65,7 @@ class CPUResult extends Component {
           }}
         >
           {" "}
-          CPU{" "}
+          PSU{" "}
         </b>
         <div>
           <b style={{ color: "white", marginLeft: "30px" }}> Type : </b>
@@ -73,18 +74,12 @@ class CPUResult extends Component {
             <option>New</option>
             <option>Used</option>
           </select>
-          <b style={{ color: "white" }}> Series : </b>
-          <select key="cpu" name="ref1" onChange={this.filterChange}>
+
+          <b style={{ color: "white" }}> PSU Watt : </b>
+          <select key="psu" name="ref1" onChange={this.filterChange}>
             <option>All</option>
-            {cateList.cpuSeries.map((cpuS, i) => (
-              <option>{cpuS}</option>
-            ))}
-          </select>
-          <b style={{ color: "white" }}> Socket : </b>
-          <select key="cpu1" name="ref2" onChange={this.filterChange}>
-            <option>All</option>
-            {cateList.cpuSocket.map((cpuS, i) => (
-              <option>{cpuS}</option>
+            {cateList.psuWatt.map((psuW, i) => (
+              <option>{psuW}</option>
             ))}
           </select>
 
@@ -112,4 +107,4 @@ class CPUResult extends Component {
   }
 }
 
-export default CPUResult;
+export default PSUResult;

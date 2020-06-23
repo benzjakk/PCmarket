@@ -91,7 +91,15 @@ export default {
     "850W++",
   ],
 
-  gamingGearType: ["Mouse", "Keyboard", "Headset", "JoyStick", "ETC"],
+  gamingGearType: [
+    "Mouse",
+    "Keyboard",
+    "Headset",
+    "JoyStick",
+    "Microphone",
+    "Webcam",
+    "ETC",
+  ],
 
   networkType: ["Router", "Switch", "AccessPoint", "สาย Lan", "ETC"],
 };

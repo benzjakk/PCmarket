@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import firebase from "../firebase/Firebase.js";
-import ItemDemo from "./itemDemo.jsx";
-import cateList from "./doc/cateList.js";
-class GPUResult extends Component {
+import firebase from "../../firebase/Firebase.js";
+import ItemDemo from "../itemDemo.jsx";
+import cateList from "../doc/cateList.js";
+
+class NetworkResult extends Component {
   state = {
     items: [],
     selectedItems: [],
@@ -13,7 +14,7 @@ class GPUResult extends Component {
   componentDidMount = (e) => {
     const db = firebase.firestore();
     db.collection("items")
-      .where("cate", "==", "Display card")
+      .where("cate", "==", "Network")
       .orderBy("time", "desc")
       .get()
       .then((res) => {
@@ -64,7 +65,7 @@ class GPUResult extends Component {
           }}
         >
           {" "}
-          Display Card{" "}
+          Network{" "}
         </b>
         <div>
           <b style={{ color: "white", marginLeft: "30px" }}> Type : </b>
@@ -73,11 +74,11 @@ class GPUResult extends Component {
             <option>New</option>
             <option>Used</option>
           </select>
-          <b style={{ color: "white" }}> Series : </b>
-          <select key="gpu" name="ref1" onChange={this.filterChange}>
+          <b style={{ color: "white" }}> Network Type : </b>
+          <select key="network" name="ref1" onChange={this.filterChange}>
             <option>All</option>
-            {cateList.gpuSeries.map((gpuS, i) => (
-              <option>{gpuS}</option>
+            {cateList.networkType.map((nwT, i) => (
+              <option>{nwT}</option>
             ))}
           </select>
 
@@ -105,4 +106,4 @@ class GPUResult extends Component {
   }
 }
 
-export default GPUResult;
+export default NetworkResult;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import firebase from "../firebase/Firebase.js";
-import ItemDemo from "./itemDemo.jsx";
-import cateList from "./doc/cateList.js";
+import firebase from "../../firebase/Firebase.js";
+import ItemDemo from "../itemDemo.jsx";
+import cateList from "../doc/cateList.js";
 class RamResult extends Component {
   state = {
     items: [],

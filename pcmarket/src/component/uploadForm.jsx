@@ -5,6 +5,7 @@ import cateList from "./doc/cateList.js";
 import UploadPic from "./uploadPic.jsx";
 class UploadForm extends Component {
   state = {
+    currentUser: null,
     name: "",
     des: "",
     flaw: "",
@@ -16,8 +17,18 @@ class UploadForm extends Component {
     currentPage: "uploadinfo",
     currentItemUid: "",
     contact: "",
+    permission: false,
   };
 
+  componentDidMount = (e) => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        if (user.emailVerified) {
+          this.setState({ permission: true, currentUser: user });
+        }
+      }
+    });
+  };
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -242,66 +253,82 @@ class UploadForm extends Component {
   }
   render() {
     console.log(this.state);
-    if (this.state.currentPage == "uploadinfo") {
-      return (
-        <form className="uploadForm" onSubmit={this.handleUpload}>
-          <b style={{ fontSize: "100px" }}>Upload</b>
-          <b>Name</b>
-          <input
-            type="text"
-            name="name"
-            required
-            onChange={this.handleChange}
-            maxLength="30"
-          />
-          <b>Description</b>
-          <textarea
-            type="text"
-            name="des"
-            required
-            onChange={this.handleChange}
-          />
-          <b>ตำหนิ</b>
-          <input
-            type="text"
-            name="flaw"
-            required
-            onChange={this.handleChange}
-          />
-          <b>ราคา</b>
-          <input
-            type="number"
-            name="price"
-            required
-            onChange={this.handleChange}
-          />
-          <b>Category</b>
-          <select name="cate" onChange={this.handleChange}>
-            <option>CPU</option>
-            <option>Display card</option>
-            <option>Mainboard</option>
-            <option>Ram</option>
-            <option>Storage</option>
-            <option>Cooling</option>
-            <option>PSU</option>
-            <option>Case</option>
-            <option>Gaming Gear</option>
-            <option>Network</option>
-          </select>
-          {this.selectCate()}
-          <b>Type</b>
-          <select name="type" onChange={this.handleChange}>
-            <option>New</option>
-            <option>Used</option>
-          </select>
-          <b>Contact</b>
-          <textarea name="contact" required onChange={this.handleChange} />
+    if (this.state.permission) {
+      if (this.state.currentPage == "uploadinfo") {
+        return (
+          <form className="uploadForm" onSubmit={this.handleUpload}>
+            <b style={{ fontSize: "100px" }}>Upload</b>
+            <b>Name</b>
+            <input
+              type="text"
+              name="name"
+              required
+              onChange={this.handleChange}
+              maxLength="30"
+            />
+            <b>Description</b>
+            <textarea
+              type="text"
+              name="des"
+              required
+              onChange={this.handleChange}
+            />
+            <b>ตำหนิ</b>
+            <input
+              type="text"
+              name="flaw"
+              required
+              onChange={this.handleChange}
+            />
+            <b>ราคา</b>
+            <input
+              type="number"
+              name="price"
+              required
+              onChange={this.handleChange}
+            />
+            <b>Category</b>
+            <select name="cate" onChange={this.handleChange}>
+              <option>CPU</option>
+              <option>Display card</option>
+              <option>Mainboard</option>
+              <option>Ram</option>
+              <option>Storage</option>
+              <option>Cooling</option>
+              <option>PSU</option>
+              <option>Case</option>
+              <option>Gaming Gear</option>
+              <option>Network</option>
+            </select>
+            {this.selectCate()}
+            <b>Type</b>
+            <select name="type" onChange={this.handleChange}>
+              <option>New</option>
+              <option>Used</option>
+            </select>
+            <b>Contact</b>
+            <textarea name="contact" required onChange={this.handleChange} />
 
-          <button>Upload Info</button>
-        </form>
-      );
+            <button>Upload Info</button>
+          </form>
+        );
+      } else {
+        return <UploadPic currentItemUid={this.state.currentItemUid} />;
+      }
     } else {
-      return <UploadPic currentItemUid={this.state.currentItemUid} />;
+      return (
+        <b
+          style={{
+            color: "red",
+            margin: "30px",
+            backgroundColor: "yellow",
+            height: "40px",
+            fontSize: "30px",
+          }}
+        >
+          !!! กรุณา Login และ ยืนยันE-mail ก่อนทำการอัปโหลด !!!
+        </b>
+      );
     }
   }
 }

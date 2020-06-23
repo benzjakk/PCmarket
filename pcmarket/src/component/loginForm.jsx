@@ -26,6 +26,7 @@ class LoginForm extends React.Component {
           password: "",
         });
       });
+    window.location.reload();
   };
   componentDidMount() {
     firebase.auth().onAuthStateChanged((user) => {

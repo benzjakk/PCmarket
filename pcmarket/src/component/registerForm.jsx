@@ -33,6 +33,7 @@ class RegisterForm extends Component {
               .sendEmailVerification()
               .then((res) => {
                 alert("Next Step : Please verification email");
+                window.location.href = "/";
               })
               .catch((error) => {
                 console.log(error);

@@ -268,7 +268,7 @@ class UploadForm extends Component {
             required
             onChange={this.handleChange}
           />
-          <b>Price</b>
+          <b>ราคา</b>
           <input
             type="number"
             name="price"

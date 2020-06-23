@@ -56,9 +56,7 @@ function App() {
           <Route path="/network">
             <NetworkResult />
           </Route>
-          <Route path="/item">
-            <ItemResult />
-          </Route>
+          <Route component={ItemResult} exact path="/item/:id" />
           <Route path="/register">
             <RegisterForm />
           </Route>

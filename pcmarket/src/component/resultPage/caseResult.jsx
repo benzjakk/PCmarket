@@ -6,6 +6,7 @@ import cateList from "../doc/cateList.js";
 class CaseResult extends Component {
   state = {
     items: [],
+    paginateNum: 10,
     selectedItems: [],
     type: "All",
     ref1: "All",
@@ -16,12 +17,13 @@ class CaseResult extends Component {
     db.collection("items")
       .where("cate", "==", "Case")
       .orderBy("time", "desc")
+      .limit(this.state.paginateNum)
       .get()
       .then((res) => {
         res.forEach((doc) => {
           //console.log(doc.data());
           let items = this.state.items;
-          items.push(doc.data());
+          items.push({ data: doc.data(), id: doc.id });
 
           this.setState({
             items: items,
@@ -32,6 +34,10 @@ class CaseResult extends Component {
       .catch((error) => {
         console.log(error);
       });
+  };
+  handleMoreResult = async (e) => {
+    await this.setState({ paginateNum: this.state.paginateNum + 10 });
+    this.componentDidMount();
   };
   handleFilter = (e) => {
     let items = this.state.items;
@@ -91,9 +97,12 @@ class CaseResult extends Component {
             </b>
           ) : null}
           {this.state.selectedItems.map((item, i) => (
-            <ItemDemo item={item} key={i} />
+            <ItemDemo item={item.data} id={item.id} key={i} />
           ))}
         </div>
+        {this.state.paginateNum === this.state.items.length ? (
+          <button onClick={this.handleMoreResult}> เพิ่มเติม </button>
+        ) : null}
       </div>
     );
   }

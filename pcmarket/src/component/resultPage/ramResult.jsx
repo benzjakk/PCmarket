@@ -5,6 +5,7 @@ import cateList from "../doc/cateList.js";
 class RamResult extends Component {
   state = {
     items: [],
+    paginateNum: 10,
     selectedItems: [],
     type: "All",
     ref1: "All",
@@ -15,12 +16,13 @@ class RamResult extends Component {
     db.collection("items")
       .where("cate", "==", "Ram")
       .orderBy("time", "desc")
+      .limit(this.state.paginateNum)
       .get()
       .then((res) => {
         res.forEach((doc) => {
           //console.log(doc.data());
           let items = this.state.items;
-          items.push(doc.data());
+          items.push({ data: doc.data(), id: doc.id });
 
           this.setState({
             items: items,
@@ -51,7 +53,10 @@ class RamResult extends Component {
       [e.target.name]: e.target.value,
     });
   };
-
+  handleMoreResult = async (e) => {
+    await this.setState({ paginateNum: this.state.paginateNum + 10 });
+    this.componentDidMount();
+  };
   render() {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -104,9 +109,12 @@ class RamResult extends Component {
             </b>
           ) : null}
           {this.state.selectedItems.map((item, i) => (
-            <ItemDemo item={item} key={i} />
+            <ItemDemo item={item.data} id={item.id} key={i} />
           ))}
         </div>
+        {this.state.paginateNum === this.state.items.length ? (
+          <button onClick={this.handleMoreResult}> เพิ่มเติม </button>
+        ) : null}
       </div>
     );
   }

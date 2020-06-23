@@ -44,6 +44,7 @@ class uploadPic extends Component {
         });
         if (snapShot.bytesTransferred == snapShot.totalBytes) {
           alert("Upload success !!!");
+          this.handleSuccess();
         }
       },
       (err) => {
@@ -72,6 +73,9 @@ class uploadPic extends Component {
       }
     );
   };
+  handleSuccess = (e) => {
+    window.location.href = "/item/" + this.props.currentItemUid;
+  };
 
   render() {
     console.log(this.state.imageAsFile, this.state.imgUrl);
@@ -95,6 +99,7 @@ class uploadPic extends Component {
           accept="image/png, image/jpeg"
         />
         <button>Upload Picture</button>
+        <button onClick={this.handleSuccess}>Skip</button>
       </form>
     );
   }

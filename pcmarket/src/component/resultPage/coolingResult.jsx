@@ -5,6 +5,7 @@ import cateList from "../doc/cateList.js";
 class CoolingResult extends Component {
   state = {
     items: [],
+    paginateNum: 10,
     selectedItems: [],
     type: "All",
     ref1: "All",
@@ -15,12 +16,13 @@ class CoolingResult extends Component {
     db.collection("items")
       .where("cate", "==", "Cooling")
       .orderBy("time", "desc")
+      .limit(this.state.paginateNum)
       .get()
       .then((res) => {
         res.forEach((doc) => {
           //console.log(doc.data());
           let items = this.state.items;
-          items.push(doc.data());
+          items.push({ data: doc.data(), id: doc.id });
 
           this.setState({
             items: items,
@@ -50,6 +52,10 @@ class CoolingResult extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+  };
+  handleMoreResult = async (e) => {
+    await this.setState({ paginateNum: this.state.paginateNum + 10 });
+    this.componentDidMount();
   };
 
   render() {
@@ -98,9 +104,12 @@ class CoolingResult extends Component {
             </b>
           ) : null}
           {this.state.selectedItems.map((item, i) => (
-            <ItemDemo item={item} key={i} />
+            <ItemDemo item={item.data} id={item.id} key={i} />
           ))}
         </div>
+        {this.state.paginateNum === this.state.items.length ? (
+          <button onClick={this.handleMoreResult}> เพิ่มเติม </button>
+        ) : null}
       </div>
     );
   }

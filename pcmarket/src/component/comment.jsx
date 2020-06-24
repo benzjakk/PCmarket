@@ -40,6 +40,7 @@ class Comment extends Component {
       .catch((error) => {
         console.log(error);
       });
+    document.getElementById("commentInput").value = "";
   };
 
   deleteComment = (e) => {
@@ -111,6 +112,7 @@ class Comment extends Component {
             <b>{user.displayName} : </b>
             <form onSubmit={this.addComment}>
               <input
+                id="commentInput"
                 style={{ width: "75%" }}
                 name="input"
                 type="text"

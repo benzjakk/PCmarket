@@ -122,10 +122,15 @@ class ItemShow extends Component {
             <div className="itemShow">
               <b style={{ backgroundColor: "gray", color: "white" }}>Name </b>
               <b>{item.name}</b>
-              <b style={{ backgroundColor: "gray", color: "white" }}>
+              <b
+                style={{
+                  backgroundColor: "gray",
+                  color: "white",
+                }}
+              >
                 Description{" "}
               </b>
-              <b>{item.des}</b>
+              <b style={{ overflowWrap: "anywhere" }}>{item.des}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ตำหนิ</b>
               <b>{item.flaw}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ราคา</b>

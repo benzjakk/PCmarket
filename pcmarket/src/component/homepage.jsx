@@ -31,6 +31,7 @@ class HomePage extends Component {
     await this.setState({ paginateNum: this.state.paginateNum + 10 });
     this.componentDidMount();
   };
+
   render() {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>

@@ -58,6 +58,7 @@ class LoginForm extends React.Component {
         this.setState({
           currentUser: response.user,
         });
+        window.location.reload();
       })
       .catch((error) => {
         this.setState({

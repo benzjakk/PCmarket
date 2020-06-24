@@ -1,5 +1,6 @@
 .itemShow {
   margin: 50px;
+  margin-top: 20px;
   padding: 20px;
   border-radius: 20px;
   background-color: white;
@@ -7,7 +8,16 @@
   flex-direction: column;
   height: 100%;
 }
-.itemShow img {
-  max-width: 100%;
-  height: auto;
+.itemShow b {
+  width: 300px;
+}
+.showIMG {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin-left: 50px;
+  margin-top: 20px;
+  border-radius: 20px;
+  padding: 20px;
+  height: 100%;
 }

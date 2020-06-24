@@ -1,14 +1,31 @@
 .uploadForm {
   display: flex;
   flex-direction: column;
+
+  margin: 30px;
+  border-radius: 20px;
   padding: 100px;
   padding-top: 30px;
+  background-color: #2b0091;
+  height: 100%;
 }
 
 .uploadForm b {
-  color: greenyellow;
+  color: white;
 }
 .uploadForm textarea {
   width: 400px;
   height: 200px;
+}
+
+.uploadPic {
+  display: flex;
+  flex-direction: column;
+
+  margin: 30px;
+  border-radius: 20px;
+  padding: 100px;
+  padding-top: 30px;
+  background-color: #2b0091;
+  height: 100%;
 }

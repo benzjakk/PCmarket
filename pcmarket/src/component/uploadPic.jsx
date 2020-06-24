@@ -30,7 +30,9 @@ class uploadPic extends Component {
     }
     const uploadTask = firebase
       .storage()
-      .ref(`items/images/${this.props.currentItemUid}/01`)
+      .ref(
+        `users/${this.props.currentUserid}/items/${this.props.currentItemUid}/pic01`
+      )
       .put(this.state.imageAsFile);
     //initiates the firebase side uploading
     uploadTask.on(
@@ -44,7 +46,6 @@ class uploadPic extends Component {
         });
         if (snapShot.bytesTransferred == snapShot.totalBytes) {
           alert("Upload success !!!");
-          this.handleSuccess();
         }
       },
       (err) => {
@@ -56,9 +57,13 @@ class uploadPic extends Component {
         // gets the download url then sets the image from firebase as the value for the imgUrl key:
         firebase
           .storage()
-          .ref("items/images")
-          .child(this.props.currentItemUid)
-          .child("01")
+          .ref(
+            "users/" +
+              this.props.currentUserid +
+              "/items/" +
+              this.props.currentItemUid
+          )
+          .child("pic01")
           .getDownloadURL()
           .then((fireBaseUrl) => {
             this.setState({ imgUrl: fireBaseUrl });
@@ -68,6 +73,9 @@ class uploadPic extends Component {
               .doc(this.props.currentItemUid)
               .update({
                 pic: fireBaseUrl,
+              })
+              .then((res) => {
+                this.handleSuccess();
               });
           });
       }
@@ -78,12 +86,16 @@ class uploadPic extends Component {
   };
 
   render() {
-    console.log(this.state.imageAsFile, this.state.imgUrl);
-
     return (
       <form
+        className="uploadPic"
         onSubmit={this.handleFireBaseUpload}
-        style={{ display: "flex", flexDirection: "column", padding: "50px" }}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          padding: "50px",
+          backgroundColor: "#2b0091",
+        }}
       >
         <b style={{ color: "yellow" }}>
           Upload Status : {this.state.uploadStatus} bytes

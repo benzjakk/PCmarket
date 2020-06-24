@@ -4,11 +4,24 @@ import "./style/itemShowstyles.css";
 import Img from "react-cool-img";
 import loadingPic from "./pic/loading.gif";
 import errorPic from "./pic/error.png";
+import Comment from "./comment.jsx";
+import Timestamp from "react-timestamp";
 class ItemShow extends Component {
-  state = { item: {}, itemUID: this.props.match.params.id, deleteYN: false };
+  state = {
+    item: [],
+    itemUID: this.props.match.params.id,
+    deleteYN: false,
+    currentUser: null,
+  };
   componentDidMount = (e) => {
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({
+          currentUser: user,
+        });
+      }
+    });
     const db = firebase.firestore();
-
     db.collection("items")
       .doc(this.state.itemUID)
       .get()
@@ -20,8 +33,7 @@ class ItemShow extends Component {
       });
   };
   showDelete = (e) => {
-    const user = firebase.auth().currentUser;
-
+    const user = this.state.currentUser;
     if (user) {
       if (user.uid == this.state.item.seller) {
         return (
@@ -59,48 +71,85 @@ class ItemShow extends Component {
   }
 
   handleDelete = (e) => {
+    const user = firebase.auth().currentUser;
     const db = firebase.firestore();
     db.collection("items")
       .doc(this.state.itemUID)
       .delete()
-      .then((res) => window.location.reload());
+      .then((res) => {
+        if (this.state.item.pic) {
+          firebase
+            .storage()
+            .ref("users/" + user.uid + "/items/" + this.state.itemUID)
+            .child("pic01")
+            .delete()
+            .then((res) => {
+              alert("delete complete");
+              window.location.reload();
+            });
+        } else {
+          alert("delete complete");
+          window.location.reload();
+        }
+      });
   };
   render() {
-    console.log(this.state);
     const item = this.state.item;
+
     if (item) {
       return (
-        <div className="itemShow">
-          <b>{item.cate}</b>
-          <Img
-            placeholder={loadingPic}
-            error={errorPic}
-            src={item.pic}
-            style={{
-              margin: "10px",
-              objectFit: "cover",
-              objectPosition: "center",
-            }}
+        <div
+          style={{ display: "flex", flexDirection: "column", height: "100%" }}
+        >
+          <section style={{ height: "100%", display: "flex" }}>
+            <div className="showIMG">
+              <b>{item.cate}</b>
+              <Img
+                placeholder={loadingPic}
+                error={errorPic}
+                src={item.pic}
+                style={{
+                  height: "512x",
+                  width: "512px",
+                  margin: "10px",
+                  marginLeft: "50px",
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+              />
+            </div>
+
+            <div className="itemShow">
+              <b style={{ backgroundColor: "gray", color: "white" }}>Name </b>
+              <b>{item.name}</b>
+              <b style={{ backgroundColor: "gray", color: "white" }}>
+                Description{" "}
+              </b>
+              <b>{item.des}</b>
+              <b style={{ backgroundColor: "gray", color: "white" }}>ตำหนิ</b>
+              <b>{item.flaw}</b>
+              <b style={{ backgroundColor: "gray", color: "white" }}>ราคา</b>
+              <b>{item.price}</b>
+              <b style={{ backgroundColor: "gray", color: "white" }}>ผู้ขาย</b>
+              <b>{item.sellerName}</b>
+              <b style={{ backgroundColor: "gray", color: "white" }}>ติดต่อ</b>
+              <b>{item.contact}</b>
+              <b style={{ backgroundColor: "gray", color: "white" }}>
+                เวลาลงขาย
+              </b>
+              {item.time ? <Timestamp date={item.time.toDate()} /> : null}
+
+              <b>
+                {item.ref1} {item.ref2}
+              </b>
+              {this.showDelete()}
+              {this.state.deleteYN ? this.showYNModal() : null}
+            </div>
+          </section>
+          <Comment
+            currentUser={this.state.currentUser}
+            itemUID={this.state.itemUID}
           />
-          <b style={{ backgroundColor: "gray", color: "white" }}>Name </b>
-          <b>{item.name}</b>
-          <b style={{ backgroundColor: "gray", color: "white" }}>
-            Description{" "}
-          </b>
-          <b>{item.des}</b>
-          <b style={{ backgroundColor: "gray", color: "white" }}>ตำหนิ</b>
-          <b>{item.flaw}</b>
-          <b style={{ backgroundColor: "gray", color: "white" }}>ราคา</b>
-          <b>{item.price}</b>
-          <b style={{ backgroundColor: "gray", color: "white" }}>ผู้ขาย</b>
-          <b>{item.sellerName}</b>
-          <b style={{ backgroundColor: "gray", color: "white" }}>ติดต่อ</b>
-          <b>{item.contact}</b>
-          <b>
-            {item.ref1} {item.ref2}
-          </b>
-          {this.showDelete()}
-          {this.state.deleteYN ? this.showYNModal() : null}
         </div>
       );
     } else {

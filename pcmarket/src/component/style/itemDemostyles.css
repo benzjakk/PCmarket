@@ -12,6 +12,7 @@
 .itemDemo b {
   width: 150px;
   overflow: hidden;
+  height: 100%;
   font-size: 16px;
 }
 

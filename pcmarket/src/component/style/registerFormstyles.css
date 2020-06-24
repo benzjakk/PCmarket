@@ -4,6 +4,10 @@
   color: white;
 }
 .registerForm {
+  margin: 30px;
+  border-radius: 20px;
   padding: 100px;
   padding-top: 30px;
+  background-color: #2b0091;
+  height: 100%;
 }

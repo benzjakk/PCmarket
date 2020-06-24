@@ -252,7 +252,6 @@ class UploadForm extends Component {
     );
   }
   render() {
-    console.log(this.state);
     if (this.state.permission) {
       if (this.state.currentPage == "uploadinfo") {
         return (
@@ -313,7 +312,12 @@ class UploadForm extends Component {
           </form>
         );
       } else {
-        return <UploadPic currentItemUid={this.state.currentItemUid} />;
+        return (
+          <UploadPic
+            currentItemUid={this.state.currentItemUid}
+            currentUserid={this.state.currentUser.uid}
+          />
+        );
       }
     } else {
       return (

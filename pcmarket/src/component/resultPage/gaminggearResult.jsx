@@ -20,15 +20,15 @@ class GamingGearResult extends Component {
       .limit(this.state.paginateNum)
       .get()
       .then((res) => {
+        let items = [];
         res.forEach((doc) => {
           //console.log(doc.data());
-          let items = this.state.items;
-          items.push({ data: doc.data(), id: doc.id });
 
-          this.setState({
-            items: items,
-            selectedItems: items,
-          });
+          items.push({ data: doc.data(), id: doc.id });
+        });
+        this.setState({
+          items: items,
+          selectedItems: items,
         });
       })
       .catch((error) => {

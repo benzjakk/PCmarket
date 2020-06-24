@@ -80,6 +80,9 @@ class RegisterForm extends Component {
           />
 
           <button>Register</button>
+          <b style={{ color: "white", fontSize: "12px", marginTop: "20px" }}>
+            Powered by Firebase Authentication
+          </b>
         </form>
       </div>
     );

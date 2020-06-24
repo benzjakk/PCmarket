@@ -1,0 +1,18 @@
+.comment {
+  margin-top: 100px;
+  background-color: white;
+  margin-left: 50px;
+  padding: 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.comment b {
+  width: 90%;
+  margin: 4px;
+}
+.comment input {
+  padding: 10px;
+  border-radius: 5px;
+  margin: 4px;
+}

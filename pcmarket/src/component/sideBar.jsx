@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import LoginForm from "./loginForm.jsx";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./style/headerstyles.css";
+import "./style/sideBarstyles.css";
 
-class Header extends Component {
+class SideBar extends Component {
   state = {};
 
   handleUpload() {
@@ -31,4 +31,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default SideBar;

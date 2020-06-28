@@ -1,0 +1,31 @@
+.topBarMenu {
+  background-color: #2b0091;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: static;
+}
+
+.topBarMenu a {
+  font-size: 18px;
+  padding-left: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.menuIcon {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+}
+
+.menuIconGroup {
+  margin-left: 10px;
+}

@@ -256,7 +256,7 @@ class UploadForm extends Component {
       if (this.state.currentPage == "uploadinfo") {
         return (
           <form className="uploadForm" onSubmit={this.handleUpload}>
-            <b style={{ fontSize: "100px" }}>Upload</b>
+            <b style={{ fontSize: "80px" }}>Upload</b>
             <b>Name</b>
             <input
               type="text"
@@ -334,8 +334,8 @@ class UploadForm extends Component {
             color: "red",
             margin: "30px",
             backgroundColor: "yellow",
-            height: "40px",
-            fontSize: "30px",
+            height: "100%",
+            fontSize: "22px",
           }}
         >
           !!! กรุณา Login และ ยืนยันE-mail ก่อนทำการอัปโหลด !!!

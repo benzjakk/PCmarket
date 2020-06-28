@@ -101,7 +101,10 @@ class ItemShow extends Component {
         <div
           style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >
-          <section style={{ height: "100%", display: "flex" }}>
+          <section
+            className="secItemShow"
+            style={{ height: "100%", display: "flex" }}
+          >
             <div className="showIMG">
               <b>{item.cate}</b>
               <Img
@@ -109,10 +112,6 @@ class ItemShow extends Component {
                 error={errorPic}
                 src={item.pic}
                 style={{
-                  height: "512x",
-                  width: "512px",
-                  margin: "10px",
-                  marginLeft: "50px",
                   objectFit: "cover",
                   objectPosition: "center",
                 }}

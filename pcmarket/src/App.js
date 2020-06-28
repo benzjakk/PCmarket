@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./component/header.jsx";
+import NavTab from "./component/navTab.jsx";
 import RegisterForm from "./component/registerForm.jsx";
 import UploadForm from "./component/uploadForm.jsx";
 import HomePage from "./component/homepage.jsx";
@@ -21,7 +21,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Header />
+        <NavTab />
         <Switch>
           <Route exact path="/">
             <HomePage />

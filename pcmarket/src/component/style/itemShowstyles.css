@@ -21,3 +21,28 @@
   padding: 20px;
   height: 100%;
 }
+.showIMG Img {
+  width: 100%;
+  margin-left: 0px;
+}
+
+@media only screen and (max-width: 800px) {
+  .secItemShow {
+    flex-direction: column;
+  }
+  .itemShow b {
+    width: 100%;
+  }
+  .itemShow {
+    margin-left: 15px;
+
+    width: 70vw;
+  }
+  .showIMG {
+    margin-left: 15px;
+    width: 70vw;
+  }
+  .showIMG Img {
+    margin-left: 0;
+  }
+}

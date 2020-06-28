@@ -11,3 +11,10 @@
   background-color: #2b0091;
   height: 100%;
 }
+@media only screen and (max-width: 800px) {
+  .registerForm {
+    margin: 10px;
+
+    padding: 10px;
+  }
+}

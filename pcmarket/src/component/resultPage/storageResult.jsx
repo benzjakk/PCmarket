@@ -71,8 +71,8 @@ class StorageResult extends Component {
           {" "}
           Storage{" "}
         </b>
-        <div>
-          <b style={{ color: "white", marginLeft: "30px" }}> Type : </b>
+        <div style={{ width: "75vw", marginLeft: "30px" }}>
+          <b style={{ color: "white" }}> Type : </b>
           <select name="type" onChange={this.filterChange}>
             <option>All</option>
             <option>New</option>

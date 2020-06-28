@@ -10,6 +10,7 @@ class StorageResult extends Component {
     type: "All",
     ref1: "All",
     ref2: "All",
+    brand: "All",
   };
   componentDidMount = (e) => {
     const db = firebase.firestore();
@@ -37,13 +38,16 @@ class StorageResult extends Component {
   handleFilter = (e) => {
     let items = this.state.items;
     if (this.state.type != "All") {
-      items = items.filter((item) => item.type === this.state.type);
+      items = items.filter((item) => item.data.type === this.state.type);
     }
     if (this.state.ref1 != "All") {
-      items = items.filter((item) => item.ref1 === this.state.ref1);
+      items = items.filter((item) => item.data.ref1 === this.state.ref1);
     }
     if (this.state.ref2 != "All") {
-      items = items.filter((item) => item.ref2 === this.state.ref2);
+      items = items.filter((item) => item.data.ref2 === this.state.ref2);
+    }
+    if (this.state.brand != "All") {
+      items = items.filter((item) => item.data.brand === this.state.brand);
     }
     this.setState({ selectedItems: items });
   };
@@ -90,6 +94,14 @@ class StorageResult extends Component {
             <option>All</option>
             {cateList.storageCapacity.map((strC, i) => (
               <option>{strC}</option>
+            ))}
+          </select>
+
+          <b style={{ color: "white" }}> Brand: </b>
+          <select key="storage2" name="brand" onChange={this.filterChange}>
+            <option>All</option>
+            {cateList.storageBrand.map((strB, i) => (
+              <option>{strB}</option>
             ))}
           </select>
 

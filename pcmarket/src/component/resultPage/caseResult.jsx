@@ -11,6 +11,7 @@ class CaseResult extends Component {
     type: "All",
     ref1: "All",
     ref2: "All",
+    brand: "All",
   };
   componentDidMount = (e) => {
     const db = firebase.firestore();
@@ -42,14 +43,18 @@ class CaseResult extends Component {
   handleFilter = (e) => {
     let items = this.state.items;
     if (this.state.type != "All") {
-      items = items.filter((item) => item.type === this.state.type);
+      items = items.filter((item) => item.data.type === this.state.type);
     }
     if (this.state.ref1 != "All") {
-      items = items.filter((item) => item.ref1 === this.state.ref1);
+      items = items.filter((item) => item.data.ref1 === this.state.ref1);
     }
     if (this.state.ref2 != "All") {
-      items = items.filter((item) => item.ref2 === this.state.ref2);
+      items = items.filter((item) => item.data.ref2 === this.state.ref2);
     }
+    if (this.state.brand != "All") {
+      items = items.filter((item) => item.data.brand === this.state.brand);
+    }
+
     this.setState({ selectedItems: items });
   };
 
@@ -80,7 +85,13 @@ class CaseResult extends Component {
             <option>New</option>
             <option>Used</option>
           </select>
-
+          <b style={{ color: "white" }}> Brand : </b>
+          <select key="case" name="brand" onChange={this.filterChange}>
+            <option>All</option>
+            {cateList.caseBrand.map((caseB, i) => (
+              <option>{caseB}</option>
+            ))}
+          </select>
           <button onClick={this.handleFilter}> Apply </button>
         </div>
         <div

@@ -10,6 +10,7 @@ class GPUResult extends Component {
     type: "All",
     ref1: "All",
     ref2: "All",
+    brand: "All",
   };
   componentDidMount = (e) => {
     const db = firebase.firestore();
@@ -37,13 +38,16 @@ class GPUResult extends Component {
   handleFilter = (e) => {
     let items = this.state.items;
     if (this.state.type != "All") {
-      items = items.filter((item) => item.type === this.state.type);
+      items = items.filter((item) => item.data.type === this.state.type);
     }
     if (this.state.ref1 != "All") {
-      items = items.filter((item) => item.ref1 === this.state.ref1);
+      items = items.filter((item) => item.data.ref1 === this.state.ref1);
     }
     if (this.state.ref2 != "All") {
-      items = items.filter((item) => item.ref2 === this.state.ref2);
+      items = items.filter((item) => item.data.ref2 === this.state.ref2);
+    }
+    if (this.state.brand != "All") {
+      items = items.filter((item) => item.data.brand === this.state.brand);
     }
     this.setState({ selectedItems: items });
   };
@@ -84,6 +88,13 @@ class GPUResult extends Component {
             <option>All</option>
             {cateList.gpuSeries.map((gpuS, i) => (
               <option>{gpuS}</option>
+            ))}
+          </select>
+          <b style={{ color: "white" }}> Brand : </b>
+          <select key="gpu1" name="brand" onChange={this.filterChange}>
+            <option>All</option>
+            {cateList.gpuBrand.map((gpuB, i) => (
+              <option>{gpuB}</option>
             ))}
           </select>
 

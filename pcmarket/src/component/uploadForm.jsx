@@ -18,6 +18,7 @@ class UploadForm extends Component {
     currentItemUid: "",
     contact: "",
     permission: false,
+    brand: "INTEL",
   };
 
   componentDidMount = (e) => {
@@ -38,34 +39,34 @@ class UploadForm extends Component {
       console.log(e.target.value);
       switch (e.target.value) {
         case "CPU":
-          this.setState({ ref1: "Pentium G", ref2: "LGA1150" });
+          this.setState({ ref1: "Pentium G", ref2: "LGA1150", brand: "INTEL" });
           break;
         case "Display card":
-          this.setState({ ref1: "GTX1000", ref2: "" });
+          this.setState({ ref1: "GTX1000", ref2: "", brand: "Asrock" });
           break;
         case "Mainboard":
-          this.setState({ ref1: "LGA1150", ref2: "" });
+          this.setState({ ref1: "LGA1150", ref2: "", brand: "Asrock" });
           break;
         case "Ram":
-          this.setState({ ref1: "4GB", ref2: "1333" });
+          this.setState({ ref1: "4GB", ref2: "1333", brand: "ADATA" });
           break;
         case "Storage":
-          this.setState({ ref1: "SSD", ref2: "500GB" });
+          this.setState({ ref1: "SSD", ref2: "500GB", brand: "ADATA" });
           break;
         case "Cooling":
-          this.setState({ ref1: "Air", ref2: "" });
+          this.setState({ ref1: "Air", ref2: "", brand: "CoolerMaster" });
           break;
         case "PSU":
-          this.setState({ ref1: "350W", ref2: "" });
+          this.setState({ ref1: "350W", ref2: "", brand: "Antec" });
           break;
         case "Case":
-          this.setState({ ref1: "", ref2: "" });
+          this.setState({ ref1: "", ref2: "", brand: "Aerocool" });
           break;
         case "Gaming Gear":
-          this.setState({ ref1: "Mouse", ref2: "" });
+          this.setState({ ref1: "Mouse", ref2: "", brand: "Razer" });
           break;
         case "Network":
-          this.setState({ ref1: "Router", ref2: "" });
+          this.setState({ ref1: "Router", ref2: "", brand: "ASUS" });
           break;
       }
     }
@@ -89,6 +90,7 @@ class UploadForm extends Component {
         sellerName: user.displayName,
         type: this.state.type,
         contact: this.state.contact,
+        brand: this.state.brand,
       })
       .then((ref) => {
         alert("Upload Info เสร็จสิ้น");
@@ -120,8 +122,23 @@ class UploadForm extends Component {
         return this.gamingGearCate();
       case "Network":
         return this.networkCate();
+      case "Case":
+        return this.caseCate();
     }
   };
+  caseCate() {
+    return (
+      <Fragment>
+        {" "}
+        <b>Brand</b>
+        <select key="case" name="brand" onChange={this.handleChange}>
+          {cateList.caseBrand.map((caseB, i) => (
+            <option>{caseB}</option>
+          ))}
+        </select>
+      </Fragment>
+    );
+  }
   networkCate() {
     return (
       <Fragment>
@@ -129,6 +146,12 @@ class UploadForm extends Component {
         <select key="network" name="ref1" onChange={this.handleChange}>
           {cateList.networkType.map((nwT, i) => (
             <option>{nwT}</option>
+          ))}
+        </select>
+        <b>Brand</b>
+        <select key="network1" name="brand" onChange={this.handleChange}>
+          {cateList.networkBrand.map((nwB, i) => (
+            <option>{nwB}</option>
           ))}
         </select>
       </Fragment>
@@ -143,6 +166,12 @@ class UploadForm extends Component {
             <option>{ggT}</option>
           ))}
         </select>
+        <b>Brand</b>
+        <select key="gaminggear1" name="brand" onChange={this.handleChange}>
+          {cateList.gaminggearBrand.map((ggB, i) => (
+            <option>{ggB}</option>
+          ))}
+        </select>
       </Fragment>
     );
   }
@@ -155,6 +184,12 @@ class UploadForm extends Component {
             <option>{psuW}</option>
           ))}
         </select>
+        <b>Brand</b>
+        <select key="psu1" name="brand" onChange={this.handleChange}>
+          {cateList.psuBrand.map((psuB, i) => (
+            <option>{psuB}</option>
+          ))}
+        </select>
       </Fragment>
     );
   }
@@ -165,6 +200,12 @@ class UploadForm extends Component {
         <select key="cooling" name="ref1" onChange={this.handleChange}>
           {cateList.coolingType.map((coolT, i) => (
             <option>{coolT}</option>
+          ))}
+        </select>
+        <b>Brand</b>
+        <select key="cooling1" name="brand" onChange={this.handleChange}>
+          {cateList.coolingBrand.map((coolB, i) => (
+            <option>{coolB}</option>
           ))}
         </select>
       </Fragment>
@@ -185,6 +226,12 @@ class UploadForm extends Component {
             <option>{strC}</option>
           ))}
         </select>
+        <b>Brand</b>
+        <select key="storage2" name="brand" onChange={this.handleChange}>
+          {cateList.storageBrand.map((strB, i) => (
+            <option>{strB}</option>
+          ))}
+        </select>
       </Fragment>
     );
   }
@@ -203,6 +250,12 @@ class UploadForm extends Component {
             <option>{ramB}</option>
           ))}
         </select>
+        <b>Brand</b>
+        <select key="ram2" name="brand" onChange={this.handleChange}>
+          {cateList.ramBrand.map((ramB, i) => (
+            <option>{ramB}</option>
+          ))}
+        </select>
       </Fragment>
     );
   }
@@ -216,6 +269,12 @@ class UploadForm extends Component {
             <option>{gpuS}</option>
           ))}
         </select>
+        <b>Brand</b>
+        <select key="gpu1" name="brand" onChange={this.handleChange}>
+          {cateList.gpuBrand.map((gpuB, i) => (
+            <option>{gpuB}</option>
+          ))}
+        </select>
       </Fragment>
     );
   }
@@ -227,6 +286,12 @@ class UploadForm extends Component {
         <select key="mb" name="ref1" onChange={this.handleChange}>
           {cateList.cpuSocket.map((cpuS, i) => (
             <option>{cpuS}</option>
+          ))}
+        </select>
+        <b>Brand</b>
+        <select key="mb1" name="brand" onChange={this.handleChange}>
+          {cateList.mbBrand.map((mbB, i) => (
+            <option>{mbB}</option>
           ))}
         </select>
       </Fragment>
@@ -248,10 +313,17 @@ class UploadForm extends Component {
             <option>{cpuS}</option>
           ))}
         </select>
+        <b>Brand</b>
+        <select key="cpu2" name="brand" onChange={this.handleChange}>
+          {cateList.cpuBrand.map((cpuB, i) => (
+            <option>{cpuB}</option>
+          ))}
+        </select>
       </Fragment>
     );
   }
   render() {
+    console.log(this.state);
     if (this.state.permission) {
       if (this.state.currentPage == "uploadinfo") {
         return (

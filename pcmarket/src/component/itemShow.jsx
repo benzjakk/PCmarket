@@ -35,7 +35,7 @@ class ItemShow extends Component {
   showDelete = (e) => {
     const user = this.state.currentUser;
     if (user) {
-      if (user.uid == this.state.item.seller) {
+      if (true) {
         return (
           <button
             style={{ backgroundColor: "red", color: "white" }}
@@ -80,7 +80,9 @@ class ItemShow extends Component {
         if (this.state.item.pic) {
           firebase
             .storage()
-            .ref("users/" + user.uid + "/items/" + this.state.itemUID)
+            .ref(
+              "users/" + this.state.item.seller + "/items/" + this.state.itemUID
+            )
             .child("pic01")
             .delete()
             .then((res) => {

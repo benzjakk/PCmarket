@@ -89,8 +89,7 @@ class Comment extends Component {
               date={comment.data.timestamp.toDate()}
             />
 
-            {this.props.currentUser &&
-            this.props.currentUser.uid == comment.data.posterId ? (
+            {this.props.currentUser ? (
               <button
                 name={comment.id}
                 onClick={this.deleteComment}

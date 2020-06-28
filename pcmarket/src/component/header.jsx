@@ -12,6 +12,7 @@ class Header extends Component {
   render() {
     return (
       <div className="header">
+        <b style={{ backgroundColor: "yellow", color: "red" }}>Admin Version</b>
         <Link to="/">PC Market</Link>
         <Link to="/cpu">CPU</Link>
         <Link to="/displaycard">Display card</Link>

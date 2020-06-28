@@ -65,7 +65,7 @@ class CaseResult extends Component {
         <b
           style={{
             color: "white",
-            paddingLeft: "33px",
+            paddingLeft: "15px",
             paddingTop: "30px",
             fontSize: "30px",
           }}

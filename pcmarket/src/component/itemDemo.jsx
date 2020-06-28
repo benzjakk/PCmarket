@@ -38,7 +38,7 @@ class ItemDemo extends Component {
             <b>ผู้ขาย : {item.sellerName}</b>
             <b>ประเภท : {item.type}</b>
             <b style={{ fontSize: "10px" }}>
-              {item.ref1} {item.ref2}
+              {item.ref1} {item.ref2} {item.brand}
             </b>
           </div>
         </a>

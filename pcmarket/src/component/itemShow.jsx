@@ -73,6 +73,7 @@ class ItemShow extends Component {
   handleDelete = (e) => {
     const user = firebase.auth().currentUser;
     const db = firebase.firestore();
+    //db.collection("items").doc(this.state.itemUID).collection("comments").de
     db.collection("items")
       .doc(this.state.itemUID)
       .delete()
@@ -134,6 +135,8 @@ class ItemShow extends Component {
               <b style={{ overflowWrap: "anywhere" }}>{item.flaw}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ราคา</b>
               <b style={{ overflowWrap: "anywhere" }}>{item.price}</b>
+              <b style={{ backgroundColor: "gray", color: "white" }}>Brand</b>
+              <b style={{ overflowWrap: "anywhere" }}>{item.brand}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ผู้ขาย</b>
               <b style={{ overflowWrap: "anywhere" }}>{item.sellerName}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ติดต่อ</b>

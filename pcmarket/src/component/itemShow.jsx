@@ -121,7 +121,7 @@ class ItemShow extends Component {
 
             <div className="itemShow">
               <b style={{ backgroundColor: "gray", color: "white" }}>Name </b>
-              <b>{item.name}</b>
+              <b style={{ overflowWrap: "anywhere" }}>{item.name}</b>
               <b
                 style={{
                   backgroundColor: "gray",
@@ -132,13 +132,13 @@ class ItemShow extends Component {
               </b>
               <b style={{ overflowWrap: "anywhere" }}>{item.des}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ตำหนิ</b>
-              <b>{item.flaw}</b>
+              <b style={{ overflowWrap: "anywhere" }}>{item.flaw}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ราคา</b>
-              <b>{item.price}</b>
+              <b style={{ overflowWrap: "anywhere" }}>{item.price}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ผู้ขาย</b>
-              <b>{item.sellerName}</b>
+              <b style={{ overflowWrap: "anywhere" }}>{item.sellerName}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ติดต่อ</b>
-              <b>{item.contact}</b>
+              <b style={{ overflowWrap: "anywhere" }}>{item.contact}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>
                 เวลาลงขาย
               </b>

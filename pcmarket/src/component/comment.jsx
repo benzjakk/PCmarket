@@ -112,6 +112,7 @@ class Comment extends Component {
             <b>{user.displayName} : </b>
             <form onSubmit={this.addComment}>
               <input
+                maxLength="200"
                 id="commentInput"
                 style={{ width: "75%" }}
                 name="input"

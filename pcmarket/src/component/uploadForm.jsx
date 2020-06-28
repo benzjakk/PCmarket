@@ -263,7 +263,7 @@ class UploadForm extends Component {
               name="name"
               required
               onChange={this.handleChange}
-              maxLength="30"
+              maxLength="50"
             />
             <b>Description</b>
             <textarea
@@ -271,6 +271,7 @@ class UploadForm extends Component {
               name="des"
               required
               onChange={this.handleChange}
+              maxLength="1000"
             />
             <b>ตำหนิ</b>
             <input
@@ -278,6 +279,7 @@ class UploadForm extends Component {
               name="flaw"
               required
               onChange={this.handleChange}
+              maxLength="100"
             />
             <b>ราคา</b>
             <input
@@ -285,6 +287,7 @@ class UploadForm extends Component {
               name="price"
               required
               onChange={this.handleChange}
+              max="10000000"
             />
             <b>Category</b>
             <select name="cate" onChange={this.handleChange}>
@@ -306,7 +309,12 @@ class UploadForm extends Component {
               <option>Used</option>
             </select>
             <b>Contact</b>
-            <textarea name="contact" required onChange={this.handleChange} />
+            <textarea
+              maxLength="200"
+              name="contact"
+              required
+              onChange={this.handleChange}
+            />
 
             <button>Upload Info</button>
           </form>

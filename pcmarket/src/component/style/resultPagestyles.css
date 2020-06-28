@@ -4,13 +4,17 @@
 }
 @media only screen and (max-width: 500px) {
   .filterDiv {
+    display: flex;
+    flex-direction: column;
+
     width: 180px;
     margin-left: 30px;
     font-size: 15px;
   }
   .filterDiv select {
-    width: 100px;
+    width: 100%;
   }
+
   .filterDiv button {
     margin-left: 0px;
   }

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import firebase from "../../firebase/Firebase.js";
 import ItemDemo from "../itemDemo.jsx";
 import cateList from "../doc/cateList.js";
+import "../style/resultPagestyles.css";
 class CPUResult extends Component {
   state = {
     items: [],
@@ -72,7 +73,7 @@ class CPUResult extends Component {
           {" "}
           CPU{" "}
         </b>
-        <div style={{ width: "75vw", marginLeft: "30px" }}>
+        <div className="filterDiv">
           <b style={{ color: "white" }}> Type : </b>
           <select name="type" onChange={this.filterChange}>
             <option>All</option>

@@ -73,7 +73,7 @@ class PSUResult extends Component {
           {" "}
           PSU{" "}
         </b>
-        <div style={{ width: "75vw", marginLeft: "30px" }}>
+        <div className="filterDiv">
           <b style={{ color: "white" }}> Type : </b>
           <select name="type" onChange={this.filterChange}>
             <option>All</option>

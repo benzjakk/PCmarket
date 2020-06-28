@@ -1,0 +1,17 @@
+.filterDiv {
+  width: 100%;
+  margin-left: 30px;
+}
+@media only screen and (max-width: 500px) {
+  .filterDiv {
+    width: 180px;
+    margin-left: 30px;
+    font-size: 15px;
+  }
+  .filterDiv select {
+    width: 100px;
+  }
+  .filterDiv button {
+    margin-left: 0px;
+  }
+}

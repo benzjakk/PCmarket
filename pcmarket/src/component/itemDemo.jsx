@@ -37,7 +37,7 @@ class ItemDemo extends Component {
             <b>ราคา : {item.price}</b>
             <b>ผู้ขาย : {item.sellerName}</b>
             <b>ประเภท : {item.type}</b>
-            <b style={{ fontSize: "13px" }}>
+            <b style={{ fontSize: "10px" }}>
               {item.ref1} {item.ref2}
             </b>
           </div>

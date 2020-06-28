@@ -105,11 +105,7 @@ class uploadPic extends Component {
           src={this.state.imageAsUrl}
           width="100px"
         />
-        <input
-          type="file"
-          onChange={this.handleImageAsFile}
-          accept="image/png, image/jpeg"
-        />
+        <input type="file" onChange={this.handleImageAsFile} />
         <button>Upload Picture</button>
         <button onClick={this.handleSuccess}>Skip</button>
       </form>

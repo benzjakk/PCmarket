@@ -22,10 +22,19 @@
 @media only screen and (max-width: 500px) {
   .itemDemo {
     margin: 10px;
+
     padding: 10px;
   }
   .itemDemo b {
-    width: 100px;
+    width: 150px;
+    font-size: 10px;
+    overflow: hidden;
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .itemDemo b {
+    width: 130px;
     font-size: 10px;
     overflow: hidden;
     height: 100%;

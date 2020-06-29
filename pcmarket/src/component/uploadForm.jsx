@@ -323,7 +323,6 @@ class UploadForm extends Component {
     );
   }
   render() {
-    console.log(this.state);
     if (this.state.permission) {
       if (this.state.currentPage == "uploadinfo") {
         return (

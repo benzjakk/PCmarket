@@ -85,11 +85,11 @@ class ItemShow extends Component {
             .child("pic01")
             .delete()
             .then((res) => {
-              alert("delete complete");
+              alert("delete info + pic complete");
               window.location.reload();
             });
         } else {
-          alert("delete complete");
+          alert("delete info complete");
           window.location.reload();
         }
       });

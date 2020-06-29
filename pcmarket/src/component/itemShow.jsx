@@ -137,6 +137,8 @@ class ItemShow extends Component {
               <b style={{ overflowWrap: "anywhere" }}>{item.price}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>Brand</b>
               <b style={{ overflowWrap: "anywhere" }}>{item.brand}</b>
+              <b style={{ backgroundColor: "gray", color: "white" }}>ประเภท</b>
+              <b style={{ overflowWrap: "anywhere" }}>{item.type}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ผู้ขาย</b>
               <b style={{ overflowWrap: "anywhere" }}>{item.sellerName}</b>
               <b style={{ backgroundColor: "gray", color: "white" }}>ติดต่อ</b>

@@ -64,7 +64,7 @@ class TopBar extends Component {
         <div style={{ width: "100%" }}>
           <div
             style={{
-              backgroundColor: "#2b0091",
+              backgroundColor: "rgb(56, 4, 107)",
               display: "flex",
               justifyItems: "space-between",
             }}

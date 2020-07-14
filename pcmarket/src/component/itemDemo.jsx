@@ -25,21 +25,21 @@ class ItemDemo extends Component {
               placeholder={loadingPic}
               src={item.pic}
               error={errorPic}
-              width="100px"
-              height="100px"
+              width="150px"
+              height="150px"
               style={{
-                margin: "10px",
+                margin: "1px",
                 objectFit: "cover",
                 objectPosition: "center",
               }}
             />
             <b>{item.name}</b>
-            <b>ราคา : {item.price}</b>
-            <b>ผู้ขาย : {item.sellerName}</b>
-            <b>ประเภท : {item.type}</b>
-            <b style={{ fontSize: "10px" }}>
+            
+            
+            <b style={{ fontSize: "10px",height:"20px" }}>
               {item.ref1} {item.ref2} {item.brand}
             </b>
+            <b style={{color:"#2b0091",fontSize:"26px",height:"50px"}}>{item.price} ฿</b>
           </div>
         </a>
       );

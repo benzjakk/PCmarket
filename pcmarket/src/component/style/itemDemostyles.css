@@ -5,15 +5,14 @@
   flex-direction: column;
   padding: 15px;
   margin-left: 15px;
-  
+
   margin-top: 15px;
   cursor: pointer;
-  
+
   border-left: solid;
   border-width: 0px;
-  
+
   border-color: #2b0091;
-  
 }
 
 .itemDemo b {
@@ -21,7 +20,7 @@
   overflow: hidden;
   height: 33px;
   font-size: 16px;
-  padding:0;
+  padding: 0;
 }
 
 .itemDemo Img {
@@ -29,22 +28,6 @@
 }
 @media only screen and (max-width: 500px) {
   .itemDemo {
-    margin: 10px;
-
-    padding: 10px;
-  }
-  .itemDemo b {
-    width: 150px;
-    font-size: 10px;
-    overflow: hidden;
-    height: 100%;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .itemDemo b {
-    width: 130px;
-    font-size: 10px;
-    overflow: hidden;
-    height: 100%;
+    margin-left: 5px;
   }
 }

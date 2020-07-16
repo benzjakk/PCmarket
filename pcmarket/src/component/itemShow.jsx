@@ -107,12 +107,13 @@ class ItemShow extends Component {
             style={{ height: "100%", display: "flex" }}
           >
             <div className="showIMG">
-              <b>{item.cate}</b>
               <Img
                 placeholder={loadingPic}
                 error={errorPic}
                 src={item.pic}
                 style={{
+                  width: "100%",
+
                   objectFit: "cover",
                   objectPosition: "center",
                 }}
@@ -120,37 +121,42 @@ class ItemShow extends Component {
             </div>
 
             <div className="itemShow">
-              <b style={{ backgroundColor: "gray", color: "white" }}>Name </b>
-              <b style={{ overflowWrap: "anywhere" }}>{item.name}</b>
+              <b style={{ fontSize: "30px", overflowWrap: "anywhere" }}>
+                {item.name}
+              </b>
+              <b style={{ color: "gray" }}>
+                {item.cate} {item.ref1} {item.ref2}
+              </b>
+
               <b
                 style={{
-                  backgroundColor: "gray",
-                  color: "white",
+                  borderTop: "solid",
+                  borderWidth: "0.5px",
+                  borderColor: "gray",
+                  overflowWrap: "anywhere",
                 }}
               >
-                Description{" "}
+                {item.des}
               </b>
-              <b style={{ overflowWrap: "anywhere" }}>{item.des}</b>
-              <b style={{ backgroundColor: "gray", color: "white" }}>ตำหนิ</b>
-              <b style={{ overflowWrap: "anywhere" }}>{item.flaw}</b>
-              <b style={{ backgroundColor: "gray", color: "white" }}>ราคา</b>
-              <b style={{ overflowWrap: "anywhere" }}>{item.price}</b>
-              <b style={{ backgroundColor: "gray", color: "white" }}>Brand</b>
-              <b style={{ overflowWrap: "anywhere" }}>{item.brand}</b>
-              <b style={{ backgroundColor: "gray", color: "white" }}>ประเภท</b>
-              <b style={{ overflowWrap: "anywhere" }}>{item.type}</b>
-              <b style={{ backgroundColor: "gray", color: "white" }}>ผู้ขาย</b>
-              <b style={{ overflowWrap: "anywhere" }}>{item.sellerName}</b>
-              <b style={{ backgroundColor: "gray", color: "white" }}>ติดต่อ</b>
-              <b style={{ overflowWrap: "anywhere" }}>{item.contact}</b>
-              <b style={{ backgroundColor: "gray", color: "white" }}>
-                เวลาลงขาย
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <b style={{ color: "gray" }}>ตำหนิ</b>
+                <b style={{ overflowWrap: "anywhere" }}>{item.flaw}</b>
+                <b style={{ color: "gray" }}>Brand</b>
+                <b style={{ overflowWrap: "anywhere" }}>{item.brand}</b>
+                <b style={{ color: "gray" }}>ประเภท</b>
+                <b style={{ overflowWrap: "anywhere" }}>{item.type}</b>
+                <b style={{ color: "gray" }}>ผู้ขาย</b>
+                <b style={{ overflowWrap: "anywhere" }}>{item.sellerName}</b>
+                <b style={{ color: "gray" }}>ติดต่อ</b>
+                <b style={{ overflowWrap: "anywhere" }}>{item.contact}</b>
+              </div>
+
+              <b style={{ backgroundColor: "gray", color: "white" }}></b>
+              <b style={{ color: "#2b0091", fontSize: "30px", height: "50px" }}>
+                {item.price} ฿
               </b>
               {item.time ? <Timestamp date={item.time.toDate()} /> : null}
 
-              <b>
-                {item.ref1} {item.ref2}
-              </b>
               {this.showDelete()}
               {this.state.deleteYN ? this.showYNModal() : null}
             </div>

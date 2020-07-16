@@ -68,7 +68,7 @@ class PSUResult extends Component {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <b
           style={{
-            color: "white",
+            color: "black",
             paddingLeft: "15px",
             paddingTop: "30px",
             fontSize: "30px",
@@ -78,21 +78,21 @@ class PSUResult extends Component {
           PSU{" "}
         </b>
         <div className="filterDiv">
-          <b style={{ color: "white" }}> Type : </b>
+          <b style={{ color: "black" }}> Type : </b>
           <select name="type" onChange={this.filterChange}>
             <option>All</option>
             <option>New</option>
             <option>Used</option>
           </select>
 
-          <b style={{ color: "white" }}> PSU Watt : </b>
+          <b style={{ color: "black" }}> PSU Watt : </b>
           <select key="psu" name="ref1" onChange={this.filterChange}>
             <option>All</option>
             {cateList.psuWatt.map((psuW, i) => (
               <option>{psuW}</option>
             ))}
           </select>
-          <b style={{ color: "white" }}> Brand : </b>
+          <b style={{ color: "black" }}> Brand : </b>
           <select key="psu1" name="brand" onChange={this.filterChange}>
             <option>All</option>
             {cateList.psuBrand.map((psuB, i) => (
@@ -110,7 +110,7 @@ class PSUResult extends Component {
           }}
         >
           {this.state.selectedItems.length == 0 ? (
-            <b style={{ color: "white", marginLeft: "30px" }}>
+            <b style={{ color: "black", marginLeft: "30px" }}>
               {" "}
               Not Found Result
             </b>

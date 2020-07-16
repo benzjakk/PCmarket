@@ -67,7 +67,7 @@ class Comment extends Component {
     return (
       <div className="comment">
         {" "}
-        <b>Comment</b>
+        <b style={{ color: "gray" }}>Comment</b>
         {this.state.comments.map((comment) => (
           <div
             style={{

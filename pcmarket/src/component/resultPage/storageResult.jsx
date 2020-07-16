@@ -66,7 +66,7 @@ class StorageResult extends Component {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <b
           style={{
-            color: "white",
+            color: "black",
             paddingLeft: "15px",
             paddingTop: "30px",
             fontSize: "30px",
@@ -76,20 +76,20 @@ class StorageResult extends Component {
           Storage{" "}
         </b>
         <div className="filterDiv">
-          <b style={{ color: "white" }}> Type : </b>
+          <b style={{ color: "black" }}> Type : </b>
           <select name="type" onChange={this.filterChange}>
             <option>All</option>
             <option>New</option>
             <option>Used</option>
           </select>
-          <b style={{ color: "white" }}> Storage type : </b>
+          <b style={{ color: "black" }}> Storage type : </b>
           <select key="storage" name="ref1" onChange={this.filterChange}>
             <option>All</option>
             {cateList.storageType.map((strT, i) => (
               <option>{strT}</option>
             ))}
           </select>
-          <b style={{ color: "white" }}> Capacity : </b>
+          <b style={{ color: "black" }}> Capacity : </b>
           <select key="storage1" name="ref2" onChange={this.filterChange}>
             <option>All</option>
             {cateList.storageCapacity.map((strC, i) => (
@@ -97,7 +97,7 @@ class StorageResult extends Component {
             ))}
           </select>
 
-          <b style={{ color: "white" }}> Brand: </b>
+          <b style={{ color: "black" }}> Brand: </b>
           <select key="storage2" name="brand" onChange={this.filterChange}>
             <option>All</option>
             {cateList.storageBrand.map((strB, i) => (
@@ -115,7 +115,7 @@ class StorageResult extends Component {
           }}
         >
           {this.state.selectedItems.length == 0 ? (
-            <b style={{ color: "white", marginLeft: "30px" }}>
+            <b style={{ color: "black", marginLeft: "30px" }}>
               {" "}
               Not Found Result
             </b>

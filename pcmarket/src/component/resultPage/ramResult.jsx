@@ -66,7 +66,7 @@ class RamResult extends Component {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <b
           style={{
-            color: "white",
+            color: "black",
             paddingLeft: "15px",
             paddingTop: "30px",
             fontSize: "30px",
@@ -76,27 +76,27 @@ class RamResult extends Component {
           RAM{" "}
         </b>
         <div className="filterDiv">
-          <b style={{ color: "white" }}> Type : </b>
+          <b style={{ color: "black" }}> Type : </b>
           <select name="type" onChange={this.filterChange}>
             <option>All</option>
             <option>New</option>
             <option>Used</option>
           </select>
-          <b style={{ color: "white" }}> Size : </b>
+          <b style={{ color: "black" }}> Size : </b>
           <select key="ram" name="ref1" onChange={this.filterChange}>
             <option>All</option>
             {cateList.ramSize.map((ramS, i) => (
               <option>{ramS}</option>
             ))}
           </select>
-          <b style={{ color: "white" }}> Bus Speed : </b>
+          <b style={{ color: "black" }}> Bus Speed : </b>
           <select key="ram1" name="ref2" onChange={this.filterChange}>
             <option>All</option>
             {cateList.ramBus.map((ramB, i) => (
               <option>{ramB}</option>
             ))}
           </select>
-          <b style={{ color: "white" }}> Brand : </b>
+          <b style={{ color: "black" }}> Brand : </b>
           <select key="ram2" name="brand" onChange={this.filterChange}>
             <option>All</option>
             {cateList.ramBrand.map((ramB, i) => (
@@ -114,7 +114,7 @@ class RamResult extends Component {
           }}
         >
           {this.state.selectedItems.length == 0 ? (
-            <b style={{ color: "white", marginLeft: "30px" }}>
+            <b style={{ color: "black", marginLeft: "30px" }}>
               {" "}
               Not Found Result
             </b>

@@ -14,6 +14,7 @@ import CaseResult from "./component/resultPage/caseResult.jsx";
 import GamingGearResult from "./component/resultPage/gaminggearResult.jsx";
 import NetworkResult from "./component/resultPage/networkResult.jsx";
 import ItemResult from "./component/itemShow.jsx";
+import TopBar from "./component/topBar.jsx";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -22,6 +23,7 @@ function App() {
     <Router>
       <div className="App">
         <NavTab />
+
         <Switch>
           <Route exact path="/">
             <HomePage />

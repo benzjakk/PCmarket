@@ -1,8 +1,7 @@
 .itemShow {
-  margin: 50px;
+  margin: 15px;
   margin-top: 20px;
   padding: 20px;
-  border-radius: 20px;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -17,7 +16,7 @@
   background-color: white;
   margin-left: 50px;
   margin-top: 20px;
-  border-radius: 20px;
+
   padding: 20px;
   height: 100%;
 }

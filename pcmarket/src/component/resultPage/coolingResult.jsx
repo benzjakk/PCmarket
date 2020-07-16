@@ -67,7 +67,7 @@ class CoolingResult extends Component {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <b
           style={{
-            color: "white",
+            color: "black",
             paddingLeft: "15px",
             paddingTop: "30px",
             fontSize: "30px",
@@ -77,21 +77,21 @@ class CoolingResult extends Component {
           Cooling{" "}
         </b>
         <div className="filterDiv">
-          <b style={{ color: "white" }}> Type : </b>
+          <b style={{ color: "black" }}> Type : </b>
           <select name="type" onChange={this.filterChange}>
             <option>All</option>
             <option>New</option>
             <option>Used</option>
           </select>
 
-          <b style={{ color: "white" }}> Cooling Type : </b>
+          <b style={{ color: "black" }}> Cooling Type : </b>
           <select key="cooling" name="ref1" onChange={this.filterChange}>
             <option>All</option>
             {cateList.coolingType.map((coolT, i) => (
               <option>{coolT}</option>
             ))}
           </select>
-          <b style={{ color: "white" }}> Brand : </b>
+          <b style={{ color: "black" }}> Brand : </b>
           <select key="cooling1" name="brand" onChange={this.filterChange}>
             <option>All</option>
             {cateList.coolingBrand.map((coolB, i) => (
@@ -109,7 +109,7 @@ class CoolingResult extends Component {
           }}
         >
           {this.state.selectedItems.length == 0 ? (
-            <b style={{ color: "white", marginLeft: "30px" }}>
+            <b style={{ color: "black", marginLeft: "30px" }}>
               {" "}
               Not Found Result
             </b>

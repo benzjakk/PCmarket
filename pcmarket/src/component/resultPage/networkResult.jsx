@@ -68,7 +68,7 @@ class NetworkResult extends Component {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <b
           style={{
-            color: "white",
+            color: "black",
             paddingLeft: "15px",
             paddingTop: "30px",
             fontSize: "30px",
@@ -78,20 +78,20 @@ class NetworkResult extends Component {
           Network{" "}
         </b>
         <div className="filterDiv">
-          <b style={{ color: "white" }}> Type : </b>
+          <b style={{ color: "black" }}> Type : </b>
           <select name="type" onChange={this.filterChange}>
             <option>All</option>
             <option>New</option>
             <option>Used</option>
           </select>
-          <b style={{ color: "white" }}> Network Type : </b>
+          <b style={{ color: "black" }}> Network Type : </b>
           <select key="network" name="ref1" onChange={this.filterChange}>
             <option>All</option>
             {cateList.networkType.map((nwT, i) => (
               <option>{nwT}</option>
             ))}
           </select>
-          <b style={{ color: "white" }}> Brand : </b>
+          <b style={{ color: "black" }}> Brand : </b>
           <select key="network1" name="brand" onChange={this.filterChange}>
             <option>All</option>
             {cateList.networkBrand.map((nwB, i) => (
@@ -109,7 +109,7 @@ class NetworkResult extends Component {
           }}
         >
           {this.state.selectedItems.length == 0 ? (
-            <b style={{ color: "white", marginLeft: "30px" }}>
+            <b style={{ color: "black", marginLeft: "30px" }}>
               {" "}
               Not Found Result
             </b>

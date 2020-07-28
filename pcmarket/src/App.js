@@ -30,10 +30,11 @@ function App() {
             width: "100vw",
             height: "30px",
           }}
-        ></div>
+        >
+          <TopBar />
+        </div>
         <div className="App">
           <NavTab />
-
           <Switch>
             <Route exact path="/">
               <HomePage />

@@ -6,7 +6,7 @@ import UploadPic from "./uploadPic.jsx";
 class UploadForm extends Component {
   state = {
     currentUser: null,
-    name: "",
+    /*name: "",
     des: "",
     flaw: "",
     ref1: "Pentium G",
@@ -17,6 +17,19 @@ class UploadForm extends Component {
     currentPage: "uploadinfo",
     currentItemUid: "",
     contact: "",
+    permission: false,
+    brand: "INTEL",*/
+    name: "111",
+    des: "111",
+    flaw: "11",
+    ref1: "Pentium G",
+    ref2: "LGA1150",
+    price: 111,
+    cate: "CPU",
+    type: "New",
+    currentPage: "uploadinfo",
+    currentItemUid: "",
+    contact: "111",
     permission: false,
     brand: "INTEL",
   };
@@ -326,7 +339,7 @@ class UploadForm extends Component {
     if (this.state.permission) {
       if (this.state.currentPage == "uploadinfo") {
         return (
-          <form className="uploadForm" onSubmit={this.handleUpload}>
+          /*<form className="uploadForm" onSubmit={this.handleUpload}>
             <b style={{ fontSize: "80px" }}>Upload</b>
             <b>Name</b>
             <input
@@ -388,7 +401,8 @@ class UploadForm extends Component {
             />
 
             <button>Upload Info</button>
-          </form>
+          </form>*/
+          <button onClick={this.handleUpload}>test</button>
         );
       } else {
         return (

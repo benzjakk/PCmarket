@@ -71,29 +71,22 @@ class ItemShow extends Component {
   }
 
   handleDelete = (e) => {
-    const user = firebase.auth().currentUser;
-    const db = firebase.firestore();
-    //db.collection("items").doc(this.state.itemUID).collection("comments").de
-    db.collection("items")
-      .doc(this.state.itemUID)
-      .delete()
-      .then((res) => {
-        if (this.state.item.pic) {
-          firebase
-            .storage()
-            .ref("users/" + user.uid + "/items/" + this.state.itemUID)
-            .child("pic01")
-            .delete()
-            .then((res) => {
-              alert("delete info + pic complete");
-              window.location.reload();
-            });
-        } else {
-          alert("delete info complete");
-          window.location.reload();
-        }
+    const path = "/items/" + this.state.itemUID;
+    console.log(path);
+    const deleteFn = firebase
+      .app()
+      .functions("asia-east2")
+      .httpsCallable("recursiveDelete");
+    deleteFn({ path: path })
+      .then(function (result) {
+        console.log("Delete success: " + JSON.stringify(result.data.result));
+        window.location.reload();
+      })
+      .catch(function (err) {
+        console.log("Error : " + err);
       });
   };
+
   render() {
     const item = this.state.item;
 

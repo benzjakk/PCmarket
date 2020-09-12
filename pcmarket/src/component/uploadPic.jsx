@@ -30,9 +30,7 @@ class uploadPic extends Component {
     }
     const uploadTask = firebase
       .storage()
-      .ref(
-        `users/${this.props.currentUserid}/items/${this.props.currentItemUid}/pic01`
-      )
+      .ref(`itemImages/${this.props.currentItemUid}/pic01`)
       .put(this.state.imageAsFile);
     //initiates the firebase side uploading
     uploadTask.on(
@@ -57,12 +55,7 @@ class uploadPic extends Component {
         // gets the download url then sets the image from firebase as the value for the imgUrl key:
         firebase
           .storage()
-          .ref(
-            "users/" +
-              this.props.currentUserid +
-              "/items/" +
-              this.props.currentItemUid
-          )
+          .ref("itemImages/" + this.props.currentItemUid)
           .child("pic01")
           .getDownloadURL()
           .then((fireBaseUrl) => {

@@ -32,6 +32,13 @@ class HomePage extends Component {
     this.componentDidMount();
   };
 
+  handleTest = (e) => {
+    const sayHello = firebase.functions().httpsCallable("sayHello");
+    sayHello({ name: "benz" }).then((res) => {
+      console.log(res.data);
+    });
+  };
+
   render() {
     return (
       <div style={{ display: "flex", flexDirection: "column" }}>
@@ -60,6 +67,7 @@ class HomePage extends Component {
         {this.state.paginateNum === this.state.items.length ? (
           <button onClick={this.handleMoreResult}> เพิ่มเติม </button>
         ) : null}
+        <button onClick={this.handleTest}>Test</button>
       </div>
     );
   }

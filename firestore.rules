@@ -1,0 +1,15 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+  		match /{allPaths=**} {
+      allow read ;
+      allow create:if request.auth != null && request.auth.token.email_verified == true && request.resource.size < 5 * 1024 * 1024;
+      allow delete,update:if false;
+      }
+    //match /users/{userid}/{allPaths=**} {
+      //allow read ,write;
+      /*allow create : if request.auth.uid == userid && request.resource.size < 5*1024*1024;*/
+      //allow update,delete: if request.auth.uid == userid || request.auth.uid=="vim1OcZtRubOeVlNVB0qf3Nb90L2";
+    //}
+  }
+}

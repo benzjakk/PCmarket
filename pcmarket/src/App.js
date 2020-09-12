@@ -22,17 +22,6 @@ function App() {
   return (
     <Router>
       <div>
-        <div
-          style={{
-            display: "none",
-            position: "fixed",
-            backgroundColor: "white",
-            width: "100vw",
-            height: "30px",
-          }}
-        >
-          <TopBar />
-        </div>
         <div className="App">
           <NavTab />
           <Switch>

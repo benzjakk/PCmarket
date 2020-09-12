@@ -1,4 +1,4 @@
-.header {
+.sidebar {
   background-color: #2b0091;
   color: white;
   display: flex;
@@ -7,7 +7,7 @@
   height: 100%;
 }
 
-.header a {
+.sidebar a {
   font-size: 26px;
   padding-left: 10px;
   padding-top: 20px;
@@ -18,7 +18,7 @@
   font-weight: bolder;
 }
 
-.header a:hover {
+.sidebar a:hover {
   cursor: pointer;
   background-color: rgb(252, 195, 6);
   color: #2b0091;

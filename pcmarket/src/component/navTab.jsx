@@ -22,9 +22,17 @@ class NavTab extends Component {
   render() {
     const { windowWidth } = this.state;
     if (windowWidth > 800) {
-      return <TopBar />;
+      return (
+        <section style={{ marginBottom: "100px" }}>
+          <SideBar />
+        </section>
+      );
     }
-    return <TopBar />;
+    return (
+      <section style={{ marginBottom: "100px" }}>
+        <TopBar />
+      </section>
+    );
   }
 }
 

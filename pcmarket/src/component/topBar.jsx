@@ -63,6 +63,7 @@ class TopBar extends Component {
       <Fragment>
         <div style={{ width: "100%" }}>
           <div
+            className="topBar"
             style={{
               backgroundColor: "#2b0091",
               display: "flex",

@@ -11,7 +11,7 @@ class SideBar extends Component {
   }
   render() {
     return (
-      <div className="header">
+      <div className="sidebar">
         <Link to="/">PC Market</Link>
         <Link to="/cpu">CPU</Link>
         <Link to="/displaycard">Display card</Link>

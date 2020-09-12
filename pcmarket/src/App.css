@@ -3,7 +3,7 @@ body {
 }
 .App {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 @media only screen and (max-width: 800px) {
   .App {

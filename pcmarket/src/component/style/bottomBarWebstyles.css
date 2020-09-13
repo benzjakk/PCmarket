@@ -1,0 +1,11 @@
+.buttomBarWeb {
+  width: 100%;
+  background-color: #2b0091;
+  color: white;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}

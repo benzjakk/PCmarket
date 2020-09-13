@@ -1,14 +1,19 @@
 @font-face {
-  font-family: 'supermarket';
+  font-family: "supermarket";
   font-style: normal;
   font-weight: 400;
-  src: url('../src/font/supermarket.ttf'); /* IE9 Compat Modes */
-  src: local('supermarket'),
-      
-       url('../src/font/supermarket.ttf') format('truetype'), /* Safari, Android, iOS */
-       
+  src: url("../src/font/supermarket.ttf"); /* IE9 Compat Modes */
+  src: local("supermarket"),
+    url("../src/font/supermarket.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+@font-face {
+  font-family: "kanit.ttf";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../src/font/kanit.ttf"); /* IE9 Compat Modes */
+  src: local("kanit"), url("../src/font/kanit.ttf") format("truetype"); /* Safari, Android, iOS */
 }
 body {
-  margin:0;
-  font-family: 'supermarket';
+  margin: 0;
+  font-family: "kanit";
 }

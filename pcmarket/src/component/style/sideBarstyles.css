@@ -1,10 +1,13 @@
 .sidebar {
-  background-color: #2b0091;
   color: white;
   display: flex;
   flex-direction: column;
   width: 150px;
   height: 100%;
+  border-style: solid;
+  border-color: #2b0091;
+  border-width: 2px;
+  margin-right: 10px;
 }
 
 .sidebar a {
@@ -13,13 +16,13 @@
   padding-top: 20px;
   padding-bottom: 20px;
   cursor: pointer;
-  color: white;
+  color: #2b0091;
   text-decoration: none;
   font-weight: bolder;
 }
 
 .sidebar a:hover {
   cursor: pointer;
-  background-color: rgb(252, 195, 6);
-  color: #2b0091;
+  background-color: #2b0091;
+  color: white;
 }

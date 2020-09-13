@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import SideBar from "./sideBar.jsx";
-import TopBar from "./topBar.jsx";
+import TopBarMobile from "./topBarMobile.jsx";
+import TopBarWeb from "./topBarWeb.jsx";
 class NavTab extends Component {
   state = { windowWidth: 0, windowHeight: 0 };
 
@@ -24,13 +25,13 @@ class NavTab extends Component {
     if (windowWidth > 800) {
       return (
         <section style={{ marginBottom: "100px" }}>
-          <SideBar />
+          <TopBarWeb />
         </section>
       );
     }
     return (
       <section style={{ marginBottom: "100px" }}>
-        <TopBar />
+        <TopBarMobile />
       </section>
     );
   }

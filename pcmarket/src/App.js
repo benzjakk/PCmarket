@@ -14,16 +14,19 @@ import CaseResult from "./component/resultPage/caseResult.jsx";
 import GamingGearResult from "./component/resultPage/gaminggearResult.jsx";
 import NetworkResult from "./component/resultPage/networkResult.jsx";
 import ItemResult from "./component/itemShow.jsx";
-import TopBar from "./component/topBar.jsx";
+import BottomBarWeb from "./component/bottomBarWeb.jsx";
+import SideBar from "./component/sideBar.jsx";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
 function App() {
   return (
     <Router>
-      <div>
+      {" "}
+      <NavTab />
+      <div className="mainBody">
+        <SideBar />
         <div className="App">
-          <NavTab />
           <Switch>
             <Route exact path="/">
               <HomePage />
@@ -68,6 +71,7 @@ function App() {
           </Switch>
         </div>
       </div>
+      <BottomBarWeb />
     </Router>
   );
 }

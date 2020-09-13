@@ -1,0 +1,59 @@
+.topBarWeb {
+  width: 100%;
+  background-color: #2b0091;
+  color: white;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+}
+.topBarWeb .logo {
+  color: white;
+  margin: 0;
+  width: 70px;
+  padding: 2px;
+  font-size: large;
+  word-spacing: 0em;
+  line-height: 1;
+  border-width: 2px;
+  border-color: white;
+  border-style: solid;
+}
+
+.topBarWeb input[type="text"] {
+  padding: 6px;
+  padding-left: 15px;
+  border: none;
+  margin-left: 20px;
+  margin-top: 20px;
+  margin-right: 16px;
+  font-size: 17px;
+  height: 30px;
+  width: 400px;
+}
+
+.topBarComponent {
+  display: flex;
+  flex-direction: row;
+}
+
+.topBarWeb .searchBut {
+  position: absolute;
+  margin-left: 460px;
+  margin-top: 23px;
+  background-color: #2b0091;
+  color: white;
+  border-radius: 0;
+}
+
+.topBarWeb .authBut {
+  margin-top: 23px;
+  background-color: white;
+  color: #2b0091;
+  border-radius: 0;
+}
+.topBarWeb input[type="text"]:focus {
+  outline: none;
+}

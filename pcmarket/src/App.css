@@ -1,12 +1,14 @@
 body {
-  background-color: rgb(228, 228, 228);
+  background-color: white;
+}
+.mainBody {
+  background-color: white;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  align-items: stretch;
 }
 .App {
-  display: flex;
-  flex-direction: row;
-}
-@media only screen and (max-width: 800px) {
-  .App {
-    flex-direction: column;
-  }
+  width: 800px;
+  background-color: rgb(228, 228, 228);
 }

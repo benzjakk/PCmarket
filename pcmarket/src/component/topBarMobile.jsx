@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import LoginForm from "./loginForm.jsx";
 import "./style/topBarstyles.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-class TopBar extends Component {
+class TopBarMobile extends Component {
   state = { showMenu: false, title: "Market" };
 
   showMenu() {
@@ -92,4 +92,4 @@ class TopBar extends Component {
   }
 }
 
-export default TopBar;
+export default TopBarMobile;

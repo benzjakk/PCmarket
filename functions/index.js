@@ -2,6 +2,7 @@ const functions = require("firebase-functions");
 const firebase_tools = require("firebase-tools");
 const admin = require("firebase-admin");
 const firebase = admin.initializeApp();
+const db = admin.firestore();
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
@@ -62,14 +63,26 @@ exports.deletePhotos = functions
   .region("asia-east2")
   .firestore.document("items/{postId}")
   .onDelete((snap, context) => {
-    console.error("seller : " + snap.seller);
-
+    console.log(
+      `User ${context.auth.uid} has requested to delete pic on post ${postId}`
+    );
     const { postId } = context.params;
+    const userId = snap.get("seller");
     const bucket = firebase.storage().bucket();
-
     return bucket.deleteFiles({
-      prefix: `itemImages/${postId}`,
+      prefix: `users/${userId}/${postId}`,
     });
   });
 
 //add item to catefolder
+/*exports.addItemCategory = functions
+  .region("asia-east2")
+  .firestore.document("items/{postId}")
+  .onCreate(async (snap, context) => {
+    const { postId } = context.params;
+    const cate = snap.get("cate");
+    console.log(snap.get("cate"));
+    // Add a new document in collection "cities" with ID 'LA'
+    const res = await db.collection(cate).doc(postId).set({ cate: "cpu" });
+  });
+*/

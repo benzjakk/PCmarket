@@ -30,7 +30,9 @@ class uploadPic extends Component {
     }
     const uploadTask = firebase
       .storage()
-      .ref(`itemImages/${this.props.currentItemUid}/pic01`)
+      .ref(
+        `users/${this.props.currentUserid}/${this.props.currentItemUid}/pic01`
+      )
       .put(this.state.imageAsFile);
     //initiates the firebase side uploading
     uploadTask.on(
@@ -42,20 +44,24 @@ class uploadPic extends Component {
           uploadStatus:
             " " + snapShot.bytesTransferred + "/" + snapShot.totalBytes + " ",
         });
-        if (snapShot.bytesTransferred == snapShot.totalBytes) {
-          alert("Upload success !!!");
-        }
       },
       (err) => {
         //catches the errors
+        alert("Your Pic is more than 5MB or it's not a Pic");
         console.log(err);
       },
       () => {
         // gets the functions from storage refences the image storage in firebase by the children
         // gets the download url then sets the image from firebase as the value for the imgUrl key:
+        alert("Upload success !!!");
         firebase
           .storage()
-          .ref("itemImages/" + this.props.currentItemUid)
+          .ref(
+            "users/" +
+              this.props.currentUserid +
+              "/" +
+              this.props.currentItemUid
+          )
           .child("pic01")
           .getDownloadURL()
           .then((fireBaseUrl) => {

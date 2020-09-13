@@ -72,7 +72,6 @@ class ItemShow extends Component {
 
   handleDelete = (e) => {
     const path = "/items/" + this.state.itemUID;
-    console.log(path);
     const deleteFn = firebase
       .app()
       .functions("asia-east2")

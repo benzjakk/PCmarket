@@ -1,28 +1,40 @@
 .itemShow {
-  margin: 15px;
-  margin-top: 20px;
-  padding: 20px;
-  background-color: white;
+  background-color: ghostwhite;
+
+  width: 300px;
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 .itemShow b {
-  width: 300px;
+  padding-left: 10px;
+  width: 100%-10px;
 }
-.showIMG {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  margin-left: 50px;
-  margin-top: 20px;
 
-  padding: 20px;
-  height: 100%;
+.showIMG {
+  padding: 1px;
+  background-color: white;
+  width: 500px;
 }
 .showIMG Img {
-  width: 100%;
-  margin-left: 0px;
+  width: 400px;
+  height: 600px;
+  object-position: center;
+  object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.secItemShow {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+}
+.itemNotFound p {
+  margin: 50px;
+  padding: 20px;
+  width: 300px;
+  color: #2b0091;
+  background-color: white;
 }
 
 @media only screen and (max-width: 800px) {

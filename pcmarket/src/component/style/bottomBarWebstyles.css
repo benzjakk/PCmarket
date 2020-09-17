@@ -1,11 +1,19 @@
 .buttomBarWeb {
+  margin-top: 30px;
   width: 100%;
+
   background-color: #2b0091;
   color: white;
   height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
+  flex-direction: column;
   bottom: 0;
+  flex-shrink: 0;
+}
+
+.buttomBarWeb p {
+  margin: 0px;
+  font-size: 10px;
 }

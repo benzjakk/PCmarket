@@ -5,7 +5,14 @@ class BottomBarWeb extends Component {
   render() {
     return (
       <div className="buttomBarWeb">
-        <div>©2020 Thaipcmarket</div>
+        <p>©2020 Thaipcmarket</p>
+        <a
+          href="https://www.facebook.com/thaipcmarket"
+          target="_blank"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          <p>Facebook Page</p>
+        </a>
       </div>
     );
   }

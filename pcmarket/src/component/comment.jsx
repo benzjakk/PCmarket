@@ -74,14 +74,12 @@ class Comment extends Component {
               display: "flex",
               flexDirection: "column",
               border: "3px",
-              backgroundColor: "gray",
+              backgroundColor: "ghostwhite",
               marginTop: "3px",
               borderRadius: "5px",
             }}
           >
-            <b style={{ backgroundColor: "gray", color: "white" }}>
-              {comment.data.posterName} :{" "}
-            </b>
+            <b style={{ color: "gray" }}>{comment.data.posterName} : </b>
 
             <b style={{ overflowWrap: "anywhere" }}>{comment.data.message}</b>
             <Timestamp

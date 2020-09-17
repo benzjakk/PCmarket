@@ -6,19 +6,18 @@
   height: 100%;
   border-style: solid;
   border-color: #2b0091;
-  border-width: 2px;
+  border-width: 1px;
   margin-right: 10px;
 }
 
 .sidebar a {
-  font-size: 26px;
+  font-size: 20px;
   padding-left: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   cursor: pointer;
   color: #2b0091;
   text-decoration: none;
-  font-weight: bolder;
 }
 
 .sidebar a:hover {

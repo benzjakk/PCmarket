@@ -94,43 +94,22 @@ class ItemShow extends Component {
         <div
           style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >
-          <section
-            className="secItemShow"
-            style={{ height: "100%", display: "flex" }}
-          >
+          <section className="secItemShow">
             <div className="showIMG">
-              <Img
-                placeholder={loadingPic}
-                error={errorPic}
-                src={item.pic}
-                style={{
-                  width: "100%",
-
-                  objectFit: "cover",
-                  objectPosition: "center",
-                }}
-              />
+              <Img placeholder={loadingPic} error={errorPic} src={item.pic} />
             </div>
 
             <div className="itemShow">
               <b style={{ fontSize: "30px", overflowWrap: "anywhere" }}>
                 {item.name}
               </b>
-              <b style={{ color: "gray" }}>
+              <b style={{ color: "#2b0091", fontSize: "14px" }}>
                 {item.cate} {item.ref1} {item.ref2}
               </b>
 
-              <b
-                style={{
-                  borderTop: "solid",
-                  borderWidth: "0.5px",
-                  borderColor: "gray",
-                  overflowWrap: "anywhere",
-                }}
-              >
-                {item.des}
-              </b>
               <div style={{ display: "flex", flexDirection: "column" }}>
+                <b style={{ color: "gray" }}>คำอธิบาย</b>
+                <b style={{ overflowWrap: "anywhere" }}>{item.des}</b>
                 <b style={{ color: "gray" }}>ตำหนิ</b>
                 <b style={{ overflowWrap: "anywhere" }}>{item.flaw}</b>
                 <b style={{ color: "gray" }}>Brand</b>
@@ -147,7 +126,12 @@ class ItemShow extends Component {
               <b style={{ color: "#2b0091", fontSize: "30px", height: "50px" }}>
                 {item.price} ฿
               </b>
-              {item.time ? <Timestamp date={item.time.toDate()} /> : null}
+              {item.time ? (
+                <Timestamp
+                  style={{ padding: "10px" }}
+                  date={item.time.toDate()}
+                />
+              ) : null}
 
               {this.showDelete()}
               {this.state.deleteYN ? this.showYNModal() : null}
@@ -161,7 +145,19 @@ class ItemShow extends Component {
       );
     } else {
       return (
-        <b style={{ color: "white", margin: "30px" }}> Item Not Found !!!</b>
+        <b className="itemNotFound">
+          {" "}
+          <p
+            style={{ marginBottom: "0", fontSize: "40px", paddingBottom: "0" }}
+          >
+            {" "}
+            Sorry ! ! !
+          </p>
+          <p style={{ marginTop: "0", color: "black", paddingTop: "0" }}>
+            {" "}
+            Item Not Found.
+          </p>
+        </b>
       );
     }
   }

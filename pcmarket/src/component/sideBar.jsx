@@ -12,7 +12,7 @@ class SideBar extends Component {
   render() {
     return (
       <div className="sidebar">
-        <Link to="/">PC Market</Link>
+        <Link to="/">Home</Link>
         <Link to="/cpu">CPU</Link>
         <Link to="/displaycard">Display card</Link>
         <Link to="/mainboard">Mainboard</Link>
@@ -23,9 +23,6 @@ class SideBar extends Component {
         <Link to="/case">Case</Link>
         <Link to="/gaminggear">Gaming Gear</Link>
         <Link to="/network">Network</Link>
-        <Link to="/register">Register</Link>
-        <LoginForm />
-        <button onClick={this.handleUpload}>Upload</button>
       </div>
     );
   }

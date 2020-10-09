@@ -120,7 +120,9 @@ class ItemShow extends Component {
 
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <b style={{ color: "gray" }}>คำอธิบาย</b>
-                <b style={{ overflowWrap: "anywhere" }}>{item.des}</b>
+                <b style={{ overflowWrap: "anywhere", whiteSpace: "pre-line" }}>
+                  {item.des}
+                </b>
                 <b style={{ color: "gray" }}>ตำหนิ</b>
                 <b style={{ overflowWrap: "anywhere" }}>{item.flaw}</b>
                 <b style={{ color: "gray" }}>Brand</b>
@@ -130,7 +132,9 @@ class ItemShow extends Component {
                 <b style={{ color: "gray" }}>ผู้ขาย</b>
                 <b style={{ overflowWrap: "anywhere" }}>{item.sellerName}</b>
                 <b style={{ color: "gray" }}>ติดต่อ</b>
-                <b style={{ overflowWrap: "anywhere" }}>{item.contact}</b>
+                <b style={{ overflowWrap: "anywhere", whiteSpace: "pre-line" }}>
+                  {item.contact}
+                </b>
               </div>
 
               <b style={{ backgroundColor: "gray", color: "white" }}></b>

@@ -6,7 +6,7 @@ import UploadPic from "./uploadPic.jsx";
 class UploadForm extends Component {
   state = {
     currentUser: null,
-    /*name: "",
+    name: "",
     des: "",
     flaw: "",
     ref1: "Pentium G",
@@ -18,9 +18,9 @@ class UploadForm extends Component {
     currentItemUid: "",
     contact: "",
     permission: false,
-    brand: "INTEL",*/
-    name: "111",
-    des: "111",
+    brand: "INTEL",
+    /*name: "111",
+    des: "111/ndasd\naddddnewline",
     flaw: "11",
     ref1: "Pentium G",
     ref2: "LGA1150",
@@ -31,7 +31,7 @@ class UploadForm extends Component {
     currentItemUid: "",
     contact: "111",
     permission: false,
-    brand: "INTEL",
+    brand: "INTEL",*/
   };
 
   componentDidMount = (e) => {

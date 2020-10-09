@@ -17,8 +17,7 @@ select {
   border-width: 1px;
 }
 
-.uploadForm button,
-select {
+.uploadForm button {
   border-radius: 0;
   width: 100%;
   background-color: #2b0091;

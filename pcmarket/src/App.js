@@ -15,7 +15,7 @@ import GamingGearResult from "./component/resultPage/gaminggearResult.jsx";
 import NetworkResult from "./component/resultPage/networkResult.jsx";
 import ItemResult from "./component/itemShow.jsx";
 import BottomBarWeb from "./component/bottomBarWeb.jsx";
-import SideBar from "./component/sideBar.jsx";
+import CateBar from "./component/cateBar.jsx";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -25,7 +25,7 @@ function App() {
       {" "}
       <NavTab />
       <div className="mainBody">
-        <SideBar />
+        <CateBar />
         <div className="App">
           <Switch>
             <Route exact path="/">

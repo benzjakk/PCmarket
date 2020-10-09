@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import SideBar from "./sideBar.jsx";
+import CateBar from "./cateBar.jsx";
 import TopBarMobile from "./topBarMobile.jsx";
 import TopBarWeb from "./topBarWeb.jsx";
 class NavTab extends Component {
@@ -24,7 +24,7 @@ class NavTab extends Component {
     const { windowWidth } = this.state;
     if (windowWidth > 800) {
       return (
-        <section style={{ marginBottom: "100px" }}>
+        <section style={{ marginBottom: "0px" }}>
           <TopBarWeb />
         </section>
       );

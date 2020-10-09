@@ -1,33 +1,51 @@
 .uploadForm {
   display: flex;
   flex-direction: column;
-
   margin: 30px;
-  border-radius: 20px;
-  padding: 100px;
-  padding-top: 30px;
-  background-color: #2b0091;
+  padding: 20px;
+  background-color: white;
   height: 100%;
 }
 
 .uploadForm b {
+  color: #2b0091;
+}
+.uploadForm input,
+textarea,
+select {
+  border-color: #2b0091;
+  border-width: 1px;
+}
+
+.uploadForm button,
+select {
+  border-radius: 0;
+  width: 100%;
+  background-color: #2b0091;
   color: white;
 }
 .uploadForm textarea {
-  width: 400px;
+  width: 100%;
   height: 200px;
+  resize: none;
 }
 
 .uploadPic {
   display: flex;
   flex-direction: column;
-
+  color: #2b0091;
   margin: 30px;
-  border-radius: 20px;
+
   padding: 100px;
   padding-top: 30px;
-  background-color: #2b0091;
+  background-color: white;
   height: 100%;
+}
+.uploadPic button {
+  border-radius: 0;
+  width: 100%;
+  background-color: #2b0091;
+  color: white;
 }
 
 @media only screen and (max-width: 800px) {

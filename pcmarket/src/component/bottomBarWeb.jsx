@@ -4,7 +4,7 @@ class BottomBarWeb extends Component {
   state = {};
   render() {
     return (
-      <div className="buttomBarWeb">
+      <footer className="buttomBarWeb">
         <p>©2020 Thaipcmarket</p>
         <a
           href="https://www.facebook.com/thaipcmarket"
@@ -13,7 +13,7 @@ class BottomBarWeb extends Component {
         >
           <p>Facebook Page</p>
         </a>
-      </div>
+      </footer>
     );
   }
 }

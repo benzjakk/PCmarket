@@ -1,4 +1,5 @@
 .sidebar {
+  background-color: whitesmoke;
   color: white;
   display: flex;
   flex-direction: column;

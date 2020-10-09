@@ -12,6 +12,7 @@ class ItemShow extends Component {
     itemUID: this.props.match.params.id,
     deleteYN: false,
     currentUser: null,
+    deleteState: false,
   };
   componentDidMount = (e) => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -51,26 +52,36 @@ class ItemShow extends Component {
   };
 
   showYNModal() {
-    return (
-      <div>
-        <button
-          onClick={(e) => {
-            this.setState({ deleteYN: false });
-          }}
-        >
-          NO
-        </button>
-        <button
-          style={{ backgroundColor: "red", color: "white" }}
-          onClick={this.handleDelete}
-        >
-          YES
-        </button>
-      </div>
-    );
+    if (this.state.deleteState == false) {
+      return (
+        <div>
+          <button
+            onClick={(e) => {
+              this.setState({ deleteYN: false });
+            }}
+          >
+            NO
+          </button>
+          <button
+            style={{ backgroundColor: "red", color: "white" }}
+            onClick={this.handleDelete}
+          >
+            YES
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <img src={loadingPic} width="100" height="70"></img>
+          <label>กำลังลบรายการ</label>
+        </div>
+      );
+    }
   }
 
   handleDelete = (e) => {
+    this.setState({ deleteState: true });
     const path = "/items/" + this.state.itemUID;
     const deleteFn = firebase
       .app()

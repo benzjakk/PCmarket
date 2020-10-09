@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import LoginForm from "./loginForm.jsx";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import "./style/sideBarstyles.css";
 
-class SideBar extends Component {
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import "./style/cateBarstyles.css";
+
+class CateBar extends Component {
   state = {};
 
   handleUpload() {
@@ -28,4 +28,4 @@ class SideBar extends Component {
   }
 }
 
-export default SideBar;
+export default CateBar;

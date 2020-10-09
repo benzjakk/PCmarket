@@ -86,27 +86,22 @@ class uploadPic extends Component {
 
   render() {
     return (
-      <form
-        className="uploadPic"
-        onSubmit={this.handleFireBaseUpload}
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "50px",
-          backgroundColor: "#2b0091",
-        }}
-      >
-        <b style={{ color: "yellow" }}>
-          Upload Status : {this.state.uploadStatus} bytes
-        </b>
+      <form className="uploadPic" onSubmit={this.handleFireBaseUpload}>
+        <b style={{ fontSize: "26px" }}>เพิ่มรูปภาพ</b>
+        <b>Upload Status : {this.state.uploadStatus} bytes</b>
         <img
           style={{ padding: "10px" }}
           src={this.state.imageAsUrl}
-          width="100px"
+          width="500px"
         />
         <input type="file" onChange={this.handleImageAsFile} />
-        <button>Upload Picture</button>
-        <button onClick={this.handleSuccess}>Skip</button>
+        <button>Upload</button>
+        <button
+          onClick={this.handleSuccess}
+          style={{ backgroundColor: "grey" }}
+        >
+          Skip
+        </button>
       </form>
     );
   }

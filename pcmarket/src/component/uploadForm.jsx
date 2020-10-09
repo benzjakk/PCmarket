@@ -339,8 +339,8 @@ class UploadForm extends Component {
     if (this.state.permission) {
       if (this.state.currentPage == "uploadinfo") {
         return (
-          /*<form className="uploadForm" onSubmit={this.handleUpload}>
-            <b style={{ fontSize: "80px" }}>Upload</b>
+          <form className="uploadForm" onSubmit={this.handleUpload}>
+            <b style={{ fontSize: "50px" }}>อัพโหลด</b>
             <b>Name</b>
             <input
               type="text"
@@ -400,9 +400,9 @@ class UploadForm extends Component {
               onChange={this.handleChange}
             />
 
-            <button>Upload Info</button>
-          </form>*/
-          <button onClick={this.handleUpload}>test</button>
+            <button>Next</button>
+          </form>
+          //<button onClick={this.handleUpload}>test</button>
         );
       } else {
         return (

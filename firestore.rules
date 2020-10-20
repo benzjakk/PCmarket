@@ -1,15 +1,16 @@
 rules_version = '2';
-service firebase.storage {
-  match /b/{bucket}/o {
-  		match /users/{userid}/{allPaths=**} {
-      allow read ;
-      allow write:if request.auth != null && request.auth.uid == userid && request.auth.token.email_verified == true && request.resource.size < 5*1024*1024 && request.resource.contentType.matches('image/.*');
-      
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /items/{itemsid} {
+      allow read;
+      allow create:if request.auth.uid == request.resource.data.seller ;
+      allow update,delete : if request.auth.uid == resource.data.seller || request.auth.uid == "vim1OcZtRubOeVlNVB0qf3Nb90L2";
+      match /comments/{commentid}{
+      allow read;
+      allow create:if request.auth.uid == request.resource.data.posterId   ;
+      allow update,delete : if request.auth.uid == resource.data.posterId || request.auth.uid == "vim1OcZtRubOeVlNVB0qf3Nb90L2";
       }
-    //match /users/{userid}/{allPaths=**} {
-      //allow read ,write;
-      /*allow create : if request.auth.uid == userid && request.resource.size < 5*1024*1024;*/
-      //allow update,delete: if request.auth.uid == userid || request.auth.uid=="vim1OcZtRubOeVlNVB0qf3Nb90L2";
-    //}
+    }
+    
   }
 }

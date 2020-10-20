@@ -39,7 +39,7 @@ class ItemDemo extends Component {
             <b style={{ fontSize: "10px",height:"20px" }}>
               {item.ref1} {item.ref2} {item.brand}
             </b>
-            <b style={{color:"#2b0091",fontSize:"26px",height:"50px"}}>{item.price} ฿</b>
+            <b style={{color:"gold",fontSize:"26px",height:"50px"}}>{item.price} ฿</b>
           </div>
         </a>
       );

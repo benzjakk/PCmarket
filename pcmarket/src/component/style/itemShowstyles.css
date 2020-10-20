@@ -1,5 +1,5 @@
 .itemShow {
-  background-color: ghostwhite;
+  background-color: #272727;
 
   width: 300px;
   display: flex;
@@ -8,11 +8,12 @@
 .itemShow b {
   padding-left: 10px;
   width: 100%-10px;
+  color: whitesmoke;
 }
 
 .showIMG {
   padding: 1px;
-  background-color: whitesmoke;
+  background-color: #171717;
   width: 500px;
 }
 .showIMG Img {

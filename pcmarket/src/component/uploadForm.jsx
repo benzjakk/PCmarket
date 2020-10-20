@@ -416,9 +416,10 @@ class UploadForm extends Component {
       return (
         <b
           style={{
-            color: "#2b0091",
+            color: "whitesmoke",
             padding: "100px",
             fontSize: "22px",
+            backgroundColor:"#272727"
           }}
         >
           !!! กรุณา Login และ ยืนยันE-mail ก่อนทำการอัพโหลด !!!

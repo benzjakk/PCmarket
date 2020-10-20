@@ -1,5 +1,5 @@
 .itemDemo {
-  background-color: white;
+  background-color: #272727;
   height: 220px;
   display: flex;
   flex-direction: column;
@@ -11,8 +11,6 @@
 
   border-left: solid;
   border-width: 0px;
-
-  border-color: #2b0091;
 }
 
 .itemDemo b {
@@ -21,6 +19,7 @@
   height: 33px;
   font-size: 16px;
   padding: 0;
+  color: whitesmoke;
 }
 
 .itemDemo Img {

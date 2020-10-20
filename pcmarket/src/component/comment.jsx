@@ -74,16 +74,16 @@ class Comment extends Component {
               display: "flex",
               flexDirection: "column",
               border: "3px",
-              backgroundColor: "ghostwhite",
+              backgroundColor: "#171717",
               marginTop: "3px",
-              borderRadius: "5px",
+              borderRadius: "0",
             }}
           >
-            <b style={{ color: "gray" }}>{comment.data.posterName} : </b>
+            <b style={{ color: "whitesmoke" }}>{comment.data.posterName} : </b>
 
-            <b style={{ overflowWrap: "anywhere" }}>{comment.data.message}</b>
+            <b style={{ overflowWrap: "anywhere",color: "whitesmoke" }}>{comment.data.message}</b>
             <Timestamp
-              style={{ fontSize: "10px", marginLeft: "5px" }}
+              style={{ fontSize: "10px", marginLeft: "5px" ,color:"whitesmoke"}}
               date={comment.data.timestamp.toDate()}
             />
 
@@ -95,8 +95,9 @@ class Comment extends Component {
                 style={{
                   marginLeft: "95%",
                   padding: "0",
-                  backgroundColor: "red",
-                  color: "white",
+                  backgroundColor: "#de4463",
+                  color: "whitesmoke",
+                  borderRadius:"0"
                 }}
               >
                 {" "}
@@ -119,7 +120,7 @@ class Comment extends Component {
                 required
                 onChange={this.handleChange}
               />
-              <button style={{ backgroundColor: "#2b0091", color: "white" }}>
+              <button style={{ backgroundColor: "#2b0091", color: "white",borderRadius:"0" }}>
                 ส่ง
               </button>
             </form>

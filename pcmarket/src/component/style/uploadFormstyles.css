@@ -3,12 +3,12 @@
   flex-direction: column;
   margin: 30px;
   padding: 20px;
-  background-color: white;
+  background-color: #272727;
   height: 100%;
 }
 
 .uploadForm b {
-  color: #2b0091;
+  color: whitesmoke;
 }
 .uploadForm input,
 textarea,
@@ -32,12 +32,12 @@ select {
 .uploadPic {
   display: flex;
   flex-direction: column;
-  color: #2b0091;
+  color: whitesmoke;
   margin: 30px;
 
   padding: 100px;
   padding-top: 30px;
-  background-color: white;
+  background-color: #272727;
   height: 100%;
 }
 .uploadPic button {

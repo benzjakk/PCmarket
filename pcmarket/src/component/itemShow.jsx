@@ -39,7 +39,7 @@ class ItemShow extends Component {
       if (user.uid == this.state.item.seller) {
         return (
           <button
-            style={{ backgroundColor: "red", color: "white" }}
+            style={{ backgroundColor: "#de4463", color: "white" ,borderRadius:"0"}}
             onClick={(e) => {
               this.setState({ deleteYN: true });
             }}
@@ -114,7 +114,7 @@ class ItemShow extends Component {
               <b style={{ fontSize: "30px", overflowWrap: "anywhere" }}>
                 {item.name}
               </b>
-              <b style={{ color: "#2b0091", fontSize: "14px" }}>
+              <b style={{ color: "white", fontSize: "14px" }}>
                 {item.cate} {item.ref1} {item.ref2}
               </b>
 
@@ -137,13 +137,13 @@ class ItemShow extends Component {
                 </b>
               </div>
 
-              <b style={{ backgroundColor: "gray", color: "white" }}></b>
-              <b style={{ color: "#2b0091", fontSize: "30px", height: "50px" }}>
+              <b style={{  color: "gray" }}>ราคา</b>
+              <b style={{ color:"gold",fontSize: "30px", height: "50px" }}>
                 {item.price} ฿
               </b>
               {item.time ? (
                 <Timestamp
-                  style={{ padding: "10px" }}
+                  style={{ padding: "10px" ,color:"whitesmoke"}}
                   date={item.time.toDate()}
                 />
               ) : null}

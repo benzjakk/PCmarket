@@ -57,6 +57,9 @@
 }
 
 .topBarWeb .authBut {
+  text-decoration: none;
+  padding: 8px;
+  margin-left: 20px;
   margin-top: 20px;
   background-color: #171717;
   color: whitesmoke;
@@ -65,7 +68,19 @@
   border-width: 1px;
   border-color: whitesmoke;
 }
-
+.topBarWeb .loginFormTop {
+  display: flex;
+}
+.topBarWeb .loginFormTop button {
+  background-color: #272727;
+  color: whitesmoke;
+  margin-left: 15px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+.topBarWeb .loginFormTop button:hover {
+  cursor: pointer;
+}
 .topBarWeb .authBut:hover {
   background-color: #272727;
   cursor: pointer;

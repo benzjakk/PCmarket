@@ -16,6 +16,7 @@ import NetworkResult from "./component/resultPage/networkResult.jsx";
 import ItemResult from "./component/itemShow.jsx";
 import BottomBarWeb from "./component/bottomBarWeb.jsx";
 import CateBar from "./component/cateBar.jsx";
+import LoginForm from './component/loginForm.jsx';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -67,6 +68,9 @@ function App() {
             </Route>
             <Route path="/upload">
               <UploadForm />
+            </Route>
+            <Route path="/login">
+              <LoginForm />
             </Route>
           </Switch>
         </div>

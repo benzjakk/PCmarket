@@ -59,28 +59,34 @@ class LoginForm extends React.Component {
           currentUser: response.user,
         });
 
-        window.location.reload();
+        window.location.href='/';
       })
       .catch((error) => {
         alert(error);
       });
   };
 
+  displayUser(){
+    return (
+      <div className="loginForm">
+        
+        <p>Hello, {this.state.currentUser.displayName}</p>
+        {this.state.emailVerified ? null : (
+          <p className="caution">Please verified your email !!</p>
+        )}
+        <button onClick={this.logout}>Logout</button>
+      </div>
+    );
+  }
+
   render() {
-    const { message, currentUser } = this.state;
-    if (currentUser) {
-      return (
-        <div className="loginForm">
-          {this.state.emailVerified ? null : (
-            <p className="caution">Please verified your email</p>
-          )}
-          <p>Hello, {currentUser.displayName}</p>
-          <button onClick={this.logout}>Logout</button>
-        </div>
-      );
+    
+    if (this.state.currentUser) {
+      return this.displayUser()
     }
     return (
       <form onSubmit={this.onSubmit} className="loginForm">
+        <label>เข้าสู่ระบบ</label>
         <input
           placeholder=" Email"
           className="input"

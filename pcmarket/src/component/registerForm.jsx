@@ -55,9 +55,10 @@ class RegisterForm extends Component {
   };
   render() {
     return (
-      <div className="registerForm">
-        <label>Registration</label>
-        <form onSubmit={this.onSubmit} className="loginForm">
+     
+        
+        <form onSubmit={this.onSubmit}className="registerForm"  >
+          <label>สมัครสมาชิก</label>
           <input
             placeholder=" Email"
             className="input"
@@ -84,7 +85,7 @@ class RegisterForm extends Component {
             Powered by Firebase Authentication
           </b>
         </form>
-      </div>
+      
     );
   }
 }

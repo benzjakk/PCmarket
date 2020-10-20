@@ -1,24 +1,38 @@
 .loginForm {
+  background-color: #272727;
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  right: 0px;
+  margin: 30px;
+  padding: 100px;
+  padding-top: 30px;
+}
+.loginForm label {
+  color: whitesmoke;
+  font-size: 30px;
+  font-weight: bold;
+}
+.loginForm p {
+  color: whitesmoke;
+  font-size: 20px;
+  margin: 10px;
 }
 .loginForm input,
 button {
   padding: 10px;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0px;
   margin: 5px;
   font-weight: bold;
 }
 
 .loginForm button:hover {
   cursor: pointer;
-  background-color: rgb(252, 195, 6);
+}
+.loginForm button {
+  background-color: #2b0091;
+  color: whitesmoke;
 }
 
 .loginForm .caution {
-  color: red;
-  background-color: rgb(252, 195, 6);
+  color: gold;
 }

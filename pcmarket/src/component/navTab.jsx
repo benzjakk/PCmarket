@@ -31,7 +31,7 @@ class NavTab extends Component {
     }
     return (
       <section style={{ marginBottom: "100px" }}>
-        <TopBarMobile />
+        <TopBarWeb />
       </section>
     );
   }

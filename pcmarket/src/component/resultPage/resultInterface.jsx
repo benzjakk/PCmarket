@@ -72,13 +72,13 @@ class ResultInterface extends Component {
       };
       genFilter(list1,list2,list3,label1,label2,label3){
         return <div className="filterDiv">
-        <b style={{ color: "black" }}> Type : </b>
+        <b> Type : </b>
         <select name="type" onChange={this.filterChange}>
           <option>All</option>
           <option>New</option>
           <option>Used</option>
         </select>
-        {list1?<Fragment><b style={{ color: "black" }}> {label1} : </b>
+        {list1?<Fragment><b> {label1} : </b>
         <select key="s1" name="ref1" onChange={this.filterChange}>
           <option>All</option>
           {list1.map((l1, i) => (
@@ -86,7 +86,7 @@ class ResultInterface extends Component {
           ))}
         </select></Fragment>:null}
         
-        {list2?<Fragment><b style={{ color: "black" }}> {label2} : </b>
+        {list2?<Fragment><b> {label2} : </b>
         <select key="s2" name="ref2" onChange={this.filterChange}>
           <option>All</option>
           {list2.map((l2, i) => (
@@ -94,7 +94,7 @@ class ResultInterface extends Component {
           ))}
         </select></Fragment>:null}
         
-        {list3?<Fragment><b style={{ color: "black" }}> {label3} : </b>
+        {list3?<Fragment><b> {label3} : </b>
         <select key="s3" name="ref3" onChange={this.filterChange}>
           <option>All</option>
           {list3.map((l3, i) => (
@@ -116,9 +116,9 @@ class ResultInterface extends Component {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <b
               style={{
-                color: "black",
+                color: "whitesmoke",
                 paddingLeft: "15px",
-                paddingTop: "30px",
+               
                 fontSize: "30px",
               }}
             >
@@ -134,7 +134,7 @@ class ResultInterface extends Component {
               }}
             >
               {this.state.selectedItems.length == 0 ? (
-                <b style={{ color: "black", marginLeft: "30px" }}>
+                <b style={{ color: "whitesmoke", marginLeft: "17px",backgroundColor:"#272727",width:"50vw",paddingLeft:"10px",marginTop:"30px" }}>
                   {" "}
                   Not Found Result
                 </b>

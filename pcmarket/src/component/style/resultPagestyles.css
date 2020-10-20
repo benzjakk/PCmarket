@@ -2,6 +2,9 @@
   width: 100%;
   margin-left: 15px;
 }
+.filterDiv b {
+  color: whitesmoke;
+}
 
 .filterDiv button {
   background-color: #2b0091;

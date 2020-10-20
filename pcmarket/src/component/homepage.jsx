@@ -37,9 +37,9 @@ class HomePage extends Component {
       <div style={{ display: "flex", flexDirection: "column" }}>
         <b
           style={{
-            color: "black",
+            color: "white",
             paddingLeft: "15px",
-            paddingTop: "30px",
+            
             fontSize: "30px",
           }}
         >

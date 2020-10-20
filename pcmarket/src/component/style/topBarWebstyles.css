@@ -1,24 +1,32 @@
 .topBarWeb {
   width: 100%;
-  background-color: #2b0091;
+  background-color: #171717;
   color: white;
-  height: 75px;
+  height: 70px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+
   position: fixed;
   top: 0;
 }
+.topBarComponent {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: baseline;
+}
 .topBarWeb .logo {
-  color: white;
+  color: whitesmoke;
   margin: 0;
-  width: 70px;
-  padding: 2px;
-  font-size: large;
+  margin-top: 13px;
+  margin-right: 33vw;
+  margin-left: auto;
+  font-size: 30px;
+  padding: 7px;
+
   word-spacing: 0em;
   line-height: 1;
-  border-width: 2px;
-  border-color: white;
+  border-width: 1px;
+  border-color: whitesmoke;
   border-style: solid;
 }
 
@@ -42,17 +50,25 @@
 .topBarWeb .searchBut {
   position: absolute;
   margin-left: 460px;
-  margin-top: 23px;
+  margin-top: 20px;
+
   background-color: #2b0091;
   color: white;
-  border-radius: 0;
 }
 
 .topBarWeb .authBut {
-  margin-top: 23px;
-  background-color: white;
-  color: #2b0091;
+  margin-top: 20px;
+  background-color: #171717;
+  color: whitesmoke;
   border-radius: 0;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: whitesmoke;
+}
+
+.topBarWeb .authBut:hover {
+  background-color: #272727;
+  cursor: pointer;
 }
 .topBarWeb input[type="text"]:focus {
   outline: none;

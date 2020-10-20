@@ -63,11 +63,10 @@ exports.deletePhotos = functions
   .region("asia-east2")
   .firestore.document("items/{postId}")
   .onDelete((snap, context) => {
-    console.log(
-      `User ${context.auth.uid} has requested to delete pic on post ${postId}`
-    );
     const { postId } = context.params;
     const userId = snap.get("seller");
+    //console.log("UserID"+userId);
+    //console.log("PostID"+postId);
     const bucket = firebase.storage().bucket();
     return bucket.deleteFiles({
       prefix: `users/${userId}/${postId}`,

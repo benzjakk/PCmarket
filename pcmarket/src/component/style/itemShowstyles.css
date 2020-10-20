@@ -41,20 +41,26 @@
 @media only screen and (max-width: 800px) {
   .secItemShow {
     flex-direction: column;
+    margin: 0;
+    width: 100vw;
   }
-  .itemShow b {
+  .showIMG {
     width: 100%;
   }
   .itemShow {
-    margin-left: 15px;
-
-    width: 70vw;
+    width: 100%;
+    padding-left: 10px;
   }
-  .showIMG {
-    margin-left: 15px;
-    width: 70vw;
-  }
+}
+@media only screen and (max-width: 650px) {
   .showIMG Img {
-    margin-left: 0;
+    width: 350px;
+    height: 550px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .showIMG Img {
+    width: 300px;
+    height: 500px;
   }
 }

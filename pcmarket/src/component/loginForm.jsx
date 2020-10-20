@@ -7,6 +7,7 @@ class LoginForm extends React.Component {
     super(props);
 
     this.state = {
+      showMenu: false,
       email: "",
       password: "",
       currentUser: null,

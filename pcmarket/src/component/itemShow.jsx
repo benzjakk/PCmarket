@@ -63,7 +63,7 @@ class ItemShow extends Component {
             NO
           </button>
           <button
-            style={{ backgroundColor: "red", color: "white" }}
+            style={{ backgroundColor: "#de4463", color: "white" }}
             onClick={this.handleDelete}
           >
             YES
@@ -74,7 +74,7 @@ class ItemShow extends Component {
       return (
         <div style={{ display: "flex", flexDirection: "column" }}>
           <img src={loadingPic} width="100" height="70"></img>
-          <label>กำลังลบรายการ</label>
+          <label style={{color:"whitesmoke"}}>กำลังลบรายการ</label>
         </div>
       );
     }

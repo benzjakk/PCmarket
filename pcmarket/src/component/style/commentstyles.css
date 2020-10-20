@@ -22,8 +22,7 @@
 }
 @media only screen and (max-width: 800px) {
   .comment {
-    margin-left: 15px;
-    margin-top: -20px;
-    width: 70vw;
+    margin: 0;
+    width: 95%;
   }
 }

@@ -2,9 +2,11 @@ import React, { Component, Fragment } from "react";
 import LoginForm from "./loginForm.jsx";
 import "./style/topBarstyles.css";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-class TopBarMobile extends Component {
-  state = { showMenu: false, title: "Market" };
-
+class TopBarMobile extends LoginForm {
+  
+  handleUpload(){
+    window.location.href='/upload';
+  }
   showMenu() {
     return (
       <div className="topBarMenu">
@@ -41,37 +43,46 @@ class TopBarMobile extends Component {
         <Link onClick={this.closeMenu} to="/network" title="Network">
           Network
         </Link>
-        <Link onClick={this.closeMenu} to="/register" title="Register">
-          Register
-        </Link>
-        <LoginForm />
-        <button onClick={this.handleUpload}>Upload</button>
+        
+        
+        
       </div>
     );
   }
-  handleUpload() {
-    document.location.href = "/upload";
-  }
+  
   closeMenu = (e) => {
     this.setState({ showMenu: false, title: e.target.title });
   };
   triggerMenu = (e) => {
     this.setState({ showMenu: !this.state.showMenu });
   };
+  displayUser(){
+    return (
+      <div className="loginFormTopMobile">
+        
+        <p>Hello, {this.state.currentUser.displayName}</p>
+        {this.state.emailVerified ? null : (
+          <p className="caution">Please verified your email !!</p>
+        )}
+        <button onClick={this.handleUpload}>Upload</button>
+        <button onClick={this.logout}>Logout</button>
+      </div>
+    );
+  }
   render() {
     return (
-      <Fragment>
+     
         <div style={{ width: "100%" }}>
           <div
             className="topBar"
             style={{
-              backgroundColor: "#2b0091",
+              backgroundColor: "#171717",
               display: "flex",
               justifyItems: "space-between",
             }}
           >
             <div
-              style={{ marginTop: "10px" }}
+              style={{ marginTop: "13px" }}
               className="menuIconGroup"
               onClick={this.triggerMenu}
             >
@@ -82,12 +93,16 @@ class TopBarMobile extends Component {
             <h1
               style={{ color: "white", marginLeft: "10px", fontSize: "20px" }}
             >
-              {this.state.title}
+              THAIPCMARKET
             </h1>
+            {this.state.currentUser?this.displayUser():<Fragment><a href="/login" className="authBut"> เข้าสู่ระบบ</a>
+            <a href="/register" className="authBut" onClick={this.handleRegis}> สมัครสมาชิก</a></Fragment>}
+            
           </div>
+          {this.state.showMenu ? this.showMenu() : null}
         </div>
-        {this.state.showMenu ? this.showMenu() : null}
-      </Fragment>
+        
+      
     );
   }
 }

@@ -414,16 +414,19 @@ class UploadForm extends Component {
       }
     } else {
       return (
+        <div style={{marginTop:"100px",width:"100%",display:"flex",justifyContent:"center"}}>
         <b
           style={{
             color: "whitesmoke",
-            padding: "100px",
-            fontSize: "22px",
+            
+            padding:"30px",
+            fontSize: "14px",
             backgroundColor:"#272727"
           }}
         >
           !!! กรุณา Login และ ยืนยันE-mail ก่อนทำการอัพโหลด !!!
         </b>
+        </div>
       );
     }
   }

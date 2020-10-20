@@ -11,3 +11,8 @@
   padding-bottom: 20px;
   height: 100%;
 }
+@media only screen and (max-width: 800px) {
+  .mainBody {
+    margin-top: 50px;
+  }
+}

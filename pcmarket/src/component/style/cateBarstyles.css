@@ -25,3 +25,8 @@
   background-color: #272727;
   color: white;
 }
+@media only screen and (max-width: 800px) {
+  .sidebar {
+    display: none;
+  }
+}

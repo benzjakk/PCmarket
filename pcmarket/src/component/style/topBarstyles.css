@@ -1,35 +1,96 @@
 .topBar {
   position: fixed;
+  height: 50px;
   width: 100%;
   top: 0;
+  display: flex;
+  justify-content: start;
 }
 .topBarMenu {
-  background-color: #2b0091;
+  top: 0;
+  margin-top: 50px;
+  position: fixed;
+  background-color: #171717;
   color: white;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 150px;
   height: 100%;
 }
 
 .topBarMenu a {
-  font-size: 18px;
+  font-size: 14px;
   padding-left: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   cursor: pointer;
   color: white;
   text-decoration: none;
   font-weight: bolder;
 }
-
+.topBarMenu a:hover {
+  background-color: #272727;
+}
+.topBar .authBut {
+  text-decoration: none;
+  color: whitesmoke;
+  background-color: #272727;
+  font-size: 14px;
+  margin-top: 17px;
+  padding: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  margin-left: 5px;
+}
 .menuIcon {
-  width: 35px;
-  height: 5px;
+  width: 30px;
+  height: 3px;
   background-color: white;
   margin: 6px 0;
 }
 
 .menuIconGroup {
   margin-left: 10px;
+}
+.topBar .loginFormTopMobile {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+.topBar .loginFormTopMobile p {
+  color: whitesmoke;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.topBar .loginFormTopMobile button {
+  margin-left: 5px;
+  background-color: #272727;
+  color: whitesmoke;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+}
+.topBar h1 {
+  margin-right: 30vw;
+}
+
+@media only screen and (max-width: 700px) {
+  .topBar .authBut {
+    font-size: 10px;
+  }
+  .topBar h1 {
+    display: none;
+  }
+  .topBar .loginFormTopMobile {
+    margin-left: 30vw;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .topBar .loginFormTopMobile {
+    margin-left: 20px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .topBar .loginFormTopMobile {
+    margin-left: 7px;
+  }
 }
